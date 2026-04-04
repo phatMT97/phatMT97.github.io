@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mai Tấn Phát – Lập trình viên COBOL Senior</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:    #1b2a4a;
+  --navy-lt: #2e4070;
+  --blue:    #2563eb;
+  --blue-lt: #eff4ff;
+  --gray-1:  #f3f5f8;
+  --gray-2:  #e4e8f0;
+  --gray-3:  #9aa3b8;
+  --gray-4:  #5a6481;
+  --text:    #1e2535;
+  --font: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+html { font-size: 13px; }
+
+body {
+  font-family: var(--font);
+  background: #d6dce8;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+  min-height: 100vh;
+}
+
+.page {
+  width: 210mm;
+  background: #fff;
+  box-shadow: 0 8px 40px rgba(0,0,0,.18);
+}
+
+/* HEADER */
+.cv-header {
+  background: var(--navy);
+  padding: 28px 36px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+.h-left .name {
+  font-size: 2.2rem; font-weight: 700; color: #fff;
+  letter-spacing: -.4px; line-height: 1;
+}
+.h-left .role {
+  font-size: .85rem; font-weight: 400; color: #9fb8df;
+  margin-top: 6px; letter-spacing: .3px;
+}
+.h-right { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
+.contact-chip { display: flex; align-items: center; gap: 6px; font-size: .75rem; color: #c4d5ed; }
+.contact-chip svg { width: 12px; height: 12px; fill: #7aaad6; flex-shrink: 0; }
+
+.accent-bar {
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue) 0%, #60a5fa 60%, transparent 100%);
+}
+
+/* BODY */
+.cv-body { display: flex; min-height: calc(297mm - 86px); }
+
+/* SIDEBAR */
+.sidebar {
+  width: 195px; min-width: 195px;
+  background: var(--gray-1);
+  border-right: 1px solid var(--gray-2);
+  padding: 24px 18px;
+  display: flex; flex-direction: column; gap: 22px;
+}
+.s-heading {
+  font-size: .6rem; font-weight: 700; letter-spacing: 1.8px;
+  text-transform: uppercase; color: var(--blue);
+  margin-bottom: 10px; padding-bottom: 5px;
+  border-bottom: 1.5px solid var(--gray-2);
+}
+.skill-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.skill-list li {
+  font-size: .78rem; color: var(--text);
+  padding: 3px 0; display: flex; align-items: center; gap: 7px;
+}
+.skill-list li::before {
+  content: ''; width: 5px; height: 5px;
+  border-radius: 50%; background: var(--blue); flex-shrink: 0;
+}
+.skill-list li span.badge {
+  margin-left: auto; font-size: .62rem; font-weight: 600;
+  color: var(--blue); background: var(--blue-lt);
+  padding: 1px 6px; border-radius: 10px; white-space: nowrap;
+}
+.skill-list li span.badge.expert { color: #0f4c8a; background: #dbeafe; }
+
+.tag-grid { display: flex; flex-wrap: wrap; gap: 4px; }
+.tag {
+  font-size: .68rem; color: var(--gray-4);
+  background: white; border: 1px solid var(--gray-2);
+  padding: 2px 7px; border-radius: 3px;
+}
+.tag.emphasis {
+  color: var(--navy-lt); background: var(--blue-lt);
+  border-color: #bfdbfe; font-weight: 500;
+}
+
+.lang-row { display: flex; flex-direction: column; gap: 7px; }
+.lang-item { display: flex; align-items: center; justify-content: space-between; }
+.lang-name { font-size: .77rem; color: var(--text); }
+.pips { display: flex; gap: 3px; }
+.pip { width: 8px; height: 8px; border-radius: 2px; background: var(--gray-2); }
+.pip.on { background: var(--blue); }
+
+.edu-deg { font-size: .78rem; font-weight: 600; color: var(--text); line-height: 1.3; }
+.edu-school { font-size: .72rem; color: var(--gray-4); margin-top: 2px; }
+.edu-year { font-size: .68rem; color: var(--blue); font-weight: 500; margin-top: 2px; }
+
+/* MAIN */
+.main { flex: 1; padding: 24px 28px; display: flex; flex-direction: column; gap: 20px; }
+
+.m-heading {
+  font-size: .62rem; font-weight: 700; letter-spacing: 1.8px;
+  text-transform: uppercase; color: var(--navy);
+  margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
+}
+.m-heading::after { content: ''; flex: 1; height: 1.5px; background: var(--gray-2); }
+
+.summary-p { font-size: .82rem; line-height: 1.75; color: var(--gray-4); }
+.summary-p strong { color: var(--text); font-weight: 600; }
+
+.callout {
+  margin-top: 10px; padding: 9px 13px;
+  background: var(--blue-lt); border-left: 3px solid var(--blue);
+  border-radius: 0 4px 4px 0;
+  font-size: .78rem; color: var(--navy-lt); font-weight: 500; line-height: 1.5;
+}
+
+.exp-list { display: flex; flex-direction: column; gap: 18px; }
+.exp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2px; }
+.exp-title { font-size: .88rem; font-weight: 700; color: var(--text); line-height: 1.3; }
+.exp-period {
+  font-size: .72rem; color: white; background: var(--navy);
+  padding: 2px 9px; border-radius: 2px; white-space: nowrap; flex-shrink: 0; font-weight: 500;
+}
+.exp-company { font-size: .76rem; color: var(--blue); font-weight: 600; margin-bottom: 7px; }
+.exp-ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.exp-ul li {
+  font-size: .79rem; color: #3d4a68; line-height: 1.6;
+  padding-left: 13px; position: relative;
+}
+.exp-ul li::before { content: '–'; position: absolute; left: 0; color: var(--gray-3); }
+.exp-ul li strong { color: var(--text); font-weight: 600; }
+.exp-entry + .exp-entry { padding-top: 16px; border-top: 1px dashed var(--gray-2); }
+
+.ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ach-card {
+  background: var(--gray-1); border: 1px solid var(--gray-2);
+  border-top: 2px solid var(--blue); border-radius: 4px; padding: 10px 12px;
+}
+.ach-card:last-child { grid-column: span 2; }
+.ach-label {
+  font-size: .67rem; font-weight: 700; letter-spacing: .8px;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 4px;
+}
+.ach-text { font-size: .77rem; color: var(--gray-4); line-height: 1.55; }
+.ach-text strong { color: var(--text); }
+
+@media print {
+  body { background: white; padding: 0; }
+  .page { box-shadow: none; width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="cv-header">
+    <div class="h-left">
+      <div class="name">Mai Tấn Phát</div>
+      <div class="role">Lập trình viên COBOL Senior &nbsp;·&nbsp; IBM Mainframe &nbsp;·&nbsp; Hiện đại hóa hệ thống với AI</div>
+    </div>
+    <div class="h-right">
+      <div class="contact-chip">
+        <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        0868 226 707
+      </div>
+      <div class="contact-chip">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        phatmtp1997@gmail.com
+      </div>
+      <div class="contact-chip">
+        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        linkedin.com/in/phatmtp
+      </div>
+      <div class="contact-chip">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        TP. Hồ Chí Minh
+      </div>
+    </div>
+  </header>
+  <div class="accent-bar"></div>
+
+  <!-- BODY -->
+  <div class="cv-body">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="s-block">
+        <div class="s-heading">Kỹ năng Mainframe</div>
+        <ul class="skill-list">
+          <li>COBOL <span class="badge expert">Thành thạo</span></li>
+          <li>JCL / Batch <span class="badge expert">Thành thạo</span></li>
+          <li>DB2 / SQL <span class="badge expert">Thành thạo</span></li>
+          <li>CICS / Online <span class="badge">Nâng cao</span></li>
+          <li>VSAM <span class="badge">Nâng cao</span></li>
+          <li>TSO / ISPF <span class="badge">Nâng cao</span></li>
+          <li>IBM z/OS <span class="badge">Nâng cao</span></li>
+        </ul>
+      </div>
+
+      <div class="s-block">
+        <div class="s-heading">Công cụ Debug &amp; Dev</div>
+        <div class="tag-grid">
+          <span class="tag">FileAid</span>
+          <span class="tag">Abend-AID</span>
+          <span class="tag">RDi Debugger</span>
+          <span class="tag">Toad for DB</span>
+          <span class="tag">Crystal Reports</span>
+          <span class="tag">Perl Script</span>
+        </div>
+      </div>
+
+      <div class="s-block">
+        <div class="s-heading">AI &amp; Công nghệ mới</div>
+        <div class="tag-grid">
+          <span class="tag emphasis">AI Agents</span>
+          <span class="tag emphasis">LLM / GPT</span>
+          <span class="tag emphasis">Gemini</span>
+          <span class="tag emphasis">Copilot</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">NLP / Tài liệu tự động</span>
+          <span class="tag">Hiện đại hóa Legacy</span>
+        </div>
+      </div>
+
+      <div class="s-block">
+        <div class="s-heading">Quản lý &amp; Vận hành</div>
+        <div class="tag-grid">
+          <span class="tag">Agile / Scrum</span>
+          <span class="tag">Dẫn dắt Sprint</span>
+          <span class="tag">Quản lý Backlog</span>
+          <span class="tag">Mentor Team</span>
+          <span class="tag">PSPO I *</span>
+        </div>
+        <p style="font-size:.65rem;color:var(--gray-3);margin-top:5px;">* Đang hoàn thiện chứng chỉ</p>
+      </div>
+
+      <div class="s-block">
+        <div class="s-heading">Ngoại ngữ</div>
+        <div class="lang-row">
+          <div class="lang-item">
+            <span class="lang-name">Tiếng Anh</span>
+            <div class="pips">
+              <div class="pip on"></div><div class="pip on"></div><div class="pip on"></div><div class="pip"></div><div class="pip"></div>
+            </div>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Tiếng Pháp</span>
+            <div class="pips">
+              <div class="pip on"></div><div class="pip on"></div><div class="pip"></div><div class="pip"></div><div class="pip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="s-block">
+        <div class="s-heading">Học vấn</div>
+        <div>
+          <div class="edu-deg">Kỹ sư Cơ điện tử</div>
+          <div class="edu-school">Trường ĐH Nông Lâm TP.HCM</div>
+          <div class="edu-year">2015 – 2019</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- Tóm tắt -->
+      <div>
+        <div class="m-heading">Tóm tắt chuyên môn</div>
+        <p class="summary-p">
+          Lập trình viên COBOL Senior với hơn <strong>7 năm kinh nghiệm</strong> thực chiến trên hệ thống IBM Mainframe (z/OS, COBOL, JCL, DB2, CICS, VSAM), chuyên về các ứng dụng quy mô lớn trong lĩnh vực bảo hiểm và doanh nghiệp. Có kinh nghiệm <strong>điều phối nhóm phát triển</strong> và tham gia các dự án outsource quốc tế, có tiếp xúc với <strong>khách hàng doanh nghiệp Nhật Bản</strong> trong các ngành ngân hàng, bảo hiểm và viễn thông qua các buổi demo và review deliverable. Quen thuộc với tiêu chuẩn chất lượng và kỳ vọng của đối tác Nhật.
+        </p>
+        <div class="callout">
+          Điểm khác biệt: Từng đóng vai trò <strong>cố vấn kỹ thuật</strong> trong dự án AI Agent phục vụ phân tích (reverse engineering) hệ thống COBOL legacy — hỗ trợ tự động hóa việc trích xuất logic nghiệp vụ, tạo tài liệu kỹ thuật và review code, giúp team tiếp cận hệ thống cũ nhanh hơn và giảm sai sót.
+        </div>
+      </div>
+
+      <!-- Thành tựu nổi bật -->
+      <div>
+        <div class="m-heading">Thành tựu nổi bật</div>
+        <div class="ach-grid">
+          <div class="ach-card">
+            <div class="ach-label">Phân tích COBOL bằng AI</div>
+            <div class="ach-text">Đóng vai trò <strong>cố vấn kỹ thuật</strong> trong dự án AI Agent phân tích hệ thống COBOL legacy — hỗ trợ tự động hóa trích xuất logic nghiệp vụ và tạo tài liệu, giúp team làm việc hiệu quả hơn với code cũ.</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-label">Dự án khách hàng Nhật Bản</div>
+            <div class="ach-text">Hỗ trợ vận hành sprint và chuẩn bị demo cho <strong>khách hàng Nhật</strong>; phối hợp chặt chẽ với các bộ phận Dev/QA/BA/BrSE để đảm bảo tiến độ và chất lượng đầu ra theo yêu cầu.</div>
+          </div>
+          <div class="ach-card">
+            <div class="ach-label">Hiện đại hóa hệ thống Legacy</div>
+            <div class="ach-text">Có kinh nghiệm thực tế trong việc phân tích và chuyển đổi các module COBOL legacy sang kiến trúc hiện đại (<strong>API / Microservices</strong>), đảm bảo hiệu suất và tính ổn định trong suốt quá trình migration.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kinh nghiệm -->
+      <div>
+        <div class="m-heading">Kinh nghiệm làm việc</div>
+        <div class="exp-list">
+
+          <div class="exp-entry">
+            <div class="exp-top">
+              <div class="exp-title">Lập trình viên COBOL Senior – Dự án Hiện đại hóa AI</div>
+              <div class="exp-period">04/2024 – Hiện tại</div>
+            </div>
+            <div class="exp-company">FPT Software – AI Center</div>
+            <ul class="exp-ul">
+              <li>Đóng vai trò <strong>cố vấn kỹ thuật</strong> trong dự án AI Agent phân tích hệ thống COBOL — cung cấp kiến thức chuyên môn để hỗ trợ tự động hóa trích xuất logic nghiệp vụ và tạo tài liệu kỹ thuật cho khách hàng doanh nghiệp Nhật Bản.</li>
+              <li>Tư vấn triển khai công cụ hỏi-đáp dựa trên NLP để duy trì sự nhất quán giữa tài liệu và mã nguồn thực tế trên các hệ thống mainframe quy mô lớn.</li>
+              <li>Hỗ trợ lập kế hoạch sprint và chuẩn bị demo cho <strong>khách hàng Nhật</strong> (ngân hàng &amp; viễn thông); phối hợp với các team Dev / QA / BA / BrSE để theo dõi tiến độ và xử lý vướng mắc.</li>
+              <li>Ứng dụng <strong>ChatGPT, Gemini và AI agent tùy chỉnh</strong> vào review code, tối ưu câu truy vấn DB2 và tăng tốc độ bàn giao.</li>
+              <li>Hướng dẫn và chia sẻ kiến thức cho các thành viên junior về COBOL, quy trình Agile và phương pháp phát triển có hỗ trợ AI.</li>
+            </ul>
+          </div>
+
+          <div class="exp-entry">
+            <div class="exp-top">
+              <div class="exp-title">Lập trình viên COBOL – Hệ thống Bảo hiểm Lõi (Ingenium)</div>
+              <div class="exp-period">05/2023 – 04/2024</div>
+            </div>
+            <div class="exp-company">Dai-ichi Life Insurance Việt Nam</div>
+            <ul class="exp-ul">
+              <li>Phát triển và bảo trì các tính năng nghiệp vụ bảo hiểm trên <strong>hệ thống lõi Ingenium</strong> bằng COBOL.</li>
+              <li>Thực hiện sửa lỗi, nâng cấp tính năng và chỉnh sửa logic theo các yêu cầu thay đổi từ môi trường production; quản lý lịch chạy batch hàng ngày.</li>
+              <li>Truy vấn và kiểm tra dữ liệu hợp đồng bằng <strong>Toad for DB</strong>; xuất báo cáo qua Crystal Reports và bảo trì module tạo email tự động.</li>
+              <li>Nắm vững nghiệp vụ <strong>bảo hiểm nhân thọ</strong> — vòng đời hợp đồng, xử lý bồi thường và tính phí bảo hiểm.</li>
+            </ul>
+          </div>
+
+          <div class="exp-entry">
+            <div class="exp-top">
+              <div class="exp-title">Lập trình viên COBOL – IBM Mainframe (Thị trường Châu Âu)</div>
+              <div class="exp-period">04/2019 – 04/2023</div>
+            </div>
+            <div class="exp-company">Capgemini Việt Nam</div>
+            <ul class="exp-ul">
+              <li>Bảo trì và phát triển các ứng dụng <strong>IBM Mainframe z/OS quy mô lớn</strong> phục vụ khách hàng Châu Âu trong lĩnh vực bảo hiểm và doanh nghiệp suốt 4 năm.</li>
+              <li>Xử lý sửa lỗi phức tạp, hỗ trợ batch job (JCL) và thiết kế lại logic nghiệp vụ trên <strong>môi trường production</strong> với yêu cầu SLA nghiêm ngặt.</li>
+              <li>Sử dụng <strong>Abend-AID</strong> để phân tích nguyên nhân sự cố production; đóng góp vào tối ưu hóa câu truy vấn DB2 và hiệu năng chương trình COBOL.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</div>
+</body>
+</html>

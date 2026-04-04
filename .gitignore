@@ -1,0 +1,25 @@
+# Claude Code / AI agent files
+.agent/
+.agents/
+.claude/
+CLAUDE.md
+skills-lock.json
+
+# Planning docs (not for production)
+implementation_plan.md
+plan_review.md
+
+# Backup/copy files
+*copy.*
+* copy.*
+
+# PDF files (CV exports)
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
