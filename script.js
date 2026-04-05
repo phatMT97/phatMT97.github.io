@@ -404,7 +404,6 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           y: 20,
           autoAlpha: 0,
-          scale: 0.5,
           stagger: 0.06,
           duration: 0.5,
           delay: 0.3,
