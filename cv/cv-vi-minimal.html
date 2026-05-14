@@ -50,12 +50,56 @@ a {
 }
 a:hover { border-bottom-color: var(--accent); }
 
-/* tasks 2-9 add more styles below */
+/* Header */
+.cv-header { margin-bottom: 28px; }
+
+.cv-name {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.cv-role {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.cv-contact {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 14px;
+}
+.cv-contact span.sep { color: var(--divider); }
+.cv-contact a { color: var(--text-muted); }
+.cv-contact a:hover { color: var(--accent); }
+
+/* tasks 3-9 add more styles below */
 </style>
 </head>
 <body data-role="general">
   <div class="page">
-    <!-- tasks 2-7 add sections here -->
+    <header class="cv-header">
+      <h1 class="cv-name">Mai Tấn Phát</h1>
+      <p class="cv-role">Senior COBOL Developer &amp; AI Tinker</p>
+      <p class="cv-contact">
+        <a href="mailto:phatmtp1997@gmail.com">✉ phatmtp1997@gmail.com</a>
+        <span class="sep">·</span>
+        <a href="tel:+84868226707">✆ 0868 226 707</a>
+        <span class="sep">·</span>
+        <a href="https://www.linkedin.com/in/ph%C3%A1t-mai-t%E1%BA%A5n-4b199a2a2/" target="_blank" rel="noopener">in linkedin</a>
+        <span class="sep">·</span>
+        <span>📍 TP. Hồ Chí Minh</span>
+      </p>
+    </header>
+    <!-- tasks 3-7 add sections below -->
   </div>
   <script>
     // task 3 adds JS here
