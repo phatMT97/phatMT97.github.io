@@ -134,7 +134,54 @@ body[data-role="cobol-dev"] [data-variant]:not([data-variant~="cobol-dev"]){ dis
 }
 .summary strong { font-weight: 600; color: var(--text); }
 
-/* tasks 5-9 add more styles below */
+/* Work Experience */
+.work-entry { margin-bottom: 22px; }
+.work-entry:last-child { margin-bottom: 0; }
+
+.work-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+.work-company {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 500;
+}
+.work-period {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.work-title {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.work-bullets {
+  list-style: none;
+  padding: 0;
+}
+.work-bullets li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.work-bullets li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+}
+.work-bullets strong { font-weight: 600; }
+
+/* tasks 6-9 add more styles below */
 </style>
 </head>
 <body data-role="general">
@@ -170,7 +217,55 @@ body[data-role="cobol-dev"] [data-variant]:not([data-variant~="cobol-dev"]){ dis
         COBOL Developer 7+ năm trên IBM z/OS, mạnh về <strong>JCL/batch, DB2/SQL, CICS, VSAM</strong>. Kinh nghiệm production-grade với SLA nghiêm ngặt cho khách hàng bảo hiểm châu Âu (Capgemini, 4 năm) và hệ thống lõi <strong>Ingenium</strong> tại Dai-ichi Life Việt Nam (chạy trên Unix, database Oracle). Thành thạo <strong>Abend-AID, FileAid, RDi</strong> cho debug và tối ưu hiệu năng.
       </p>
     </section>
-    <!-- tasks 5-7 add sections below -->
+
+    <section class="section work">
+      <h2 class="section-title">Work Experience</h2>
+
+      <div class="work-entry">
+        <div class="work-head">
+          <h3 class="work-company">FPT Software — AI Center</h3>
+          <span class="work-period">04/2024 – Hiện tại</span>
+        </div>
+        <p class="work-title">Senior COBOL Developer &amp; AI Tinker</p>
+        <ul class="work-bullets">
+          <li data-variant="general ba-pm cobol-dev">Đóng vai trò <strong>cố vấn kỹ thuật</strong> trong dự án AI Agent phân tích hệ thống COBOL legacy cho khách hàng doanh nghiệp Nhật Bản.</li>
+          <li data-variant="general cobol-dev">Hỗ trợ tối ưu câu truy vấn DB2 và review code COBOL bằng <strong>ChatGPT, Gemini và AI agent tùy chỉnh</strong>.</li>
+          <li data-variant="general ba-pm">Hỗ trợ sprint planning, demo cho khách hàng Nhật; phối hợp với Dev/QA/BA/BrSE để theo dõi tiến độ.</li>
+          <li data-variant="ba-pm">Mentor thành viên junior về COBOL, Agile và quy trình phát triển có hỗ trợ AI.</li>
+          <li data-variant="cobol-dev">Tư vấn triển khai công cụ NLP duy trì nhất quán giữa tài liệu và mã nguồn trên hệ thống mainframe quy mô lớn.</li>
+        </ul>
+      </div>
+
+      <div class="work-entry">
+        <div class="work-head">
+          <h3 class="work-company">Dai-ichi Life Insurance Việt Nam</h3>
+          <span class="work-period">05/2023 – 04/2024</span>
+        </div>
+        <p class="work-title">COBOL Developer — Ingenium Core System</p>
+        <ul class="work-bullets">
+          <li data-variant="general ba-pm cobol-dev">Phát triển và bảo trì tính năng nghiệp vụ trên hệ thống lõi <strong>Ingenium</strong> bằng COBOL (môi trường Unix, database Oracle).</li>
+          <li data-variant="general cobol-dev">Sửa lỗi production, nâng cấp logic theo yêu cầu thay đổi, quản lý lịch batch hàng ngày.</li>
+          <li data-variant="general ba-pm">Hiểu sâu nghiệp vụ <strong>bảo hiểm nhân thọ</strong> — vòng đời hợp đồng, xử lý bồi thường, tính phí.</li>
+          <li data-variant="ba-pm">Phối hợp với team nghiệp vụ để làm rõ yêu cầu và triển khai tính năng đúng tiến độ.</li>
+          <li data-variant="cobol-dev">Truy vấn và kiểm tra dữ liệu hợp đồng bằng <strong>Toad for DB</strong>, bảo trì module sinh báo cáo.</li>
+        </ul>
+      </div>
+
+      <div class="work-entry">
+        <div class="work-head">
+          <h3 class="work-company">Capgemini Việt Nam</h3>
+          <span class="work-period">04/2019 – 04/2023</span>
+        </div>
+        <p class="work-title">COBOL Developer — EU Insurance Mainframe</p>
+        <ul class="work-bullets">
+          <li data-variant="general ba-pm cobol-dev">Bảo trì và phát triển ứng dụng <strong>IBM Mainframe z/OS quy mô lớn</strong> cho khách hàng bảo hiểm châu Âu suốt 4 năm.</li>
+          <li data-variant="general cobol-dev">Xử lý sửa lỗi production phức tạp, hỗ trợ batch JCL với SLA nghiêm ngặt.</li>
+          <li data-variant="general cobol-dev">Sử dụng <strong>Abend-AID</strong> phân tích sự cố production; tối ưu DB2 query và hiệu năng COBOL.</li>
+          <li data-variant="ba-pm">Phối hợp với team châu Âu xuyên múi giờ, đảm bảo bàn giao đúng tiến độ.</li>
+        </ul>
+      </div>
+    </section>
+    <!-- tasks 6-7 add sections below -->
   </div>
   <script>
     const VARIANTS = ['general', 'ba-pm', 'cobol-dev'];
