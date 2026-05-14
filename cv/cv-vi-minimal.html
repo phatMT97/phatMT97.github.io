@@ -181,7 +181,31 @@ body[data-role="cobol-dev"] [data-variant]:not([data-variant~="cobol-dev"]){ dis
 }
 .work-bullets strong { font-weight: 600; }
 
-/* tasks 6-9 add more styles below */
+/* Skills */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.skill-group h4 {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.skill-group p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Per-variant order */
+body[data-role="general"]   .skill-group { order: var(--ord-general,   99); }
+body[data-role="ba-pm"]     .skill-group { order: var(--ord-ba-pm,     99); }
+body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
+
+/* tasks 7-9 add more styles below */
 </style>
 </head>
 <body data-role="general">
@@ -265,7 +289,68 @@ body[data-role="cobol-dev"] [data-variant]:not([data-variant~="cobol-dev"]){ dis
         </ul>
       </div>
     </section>
-    <!-- tasks 6-7 add sections below -->
+
+    <section class="section skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-list">
+
+        <div class="skill-group" data-variant="general cobol-dev"
+             style="--ord-general:1; --ord-cobol-dev:1">
+          <h4>Mainframe</h4>
+          <p>COBOL · JCL/Batch · DB2/SQL · CICS · VSAM · z/OS · TSO/ISPF</p>
+        </div>
+
+        <div class="skill-group" data-variant="general cobol-dev"
+             style="--ord-general:2; --ord-cobol-dev:4">
+          <h4>AI / Tools</h4>
+          <p>AI Agents · LLMs (GPT, Gemini) · Prompt Engineering · Legacy Modernization · Code review automation</p>
+        </div>
+
+        <div class="skill-group" data-variant="general ba-pm"
+             style="--ord-general:3; --ord-ba-pm:1">
+          <h4>BA &amp; Process</h4>
+          <p>Agile / Scrum · Sprint Planning · Requirement Clarification · Backlog Management · PSPO I</p>
+        </div>
+
+        <div class="skill-group" data-variant="general ba-pm"
+             style="--ord-general:4; --ord-ba-pm:2">
+          <h4>Soft Skills</h4>
+          <p>Mentoring · Cross-functional teamwork · Stakeholder Communication · Client demo (JP, EU)</p>
+        </div>
+
+        <div class="skill-group" data-variant="ba-pm"
+             style="--ord-ba-pm:3">
+          <h4>Domain — Insurance</h4>
+          <p>Vòng đời hợp đồng · Claim processing · Batch operations · Life insurance</p>
+        </div>
+
+        <div class="skill-group" data-variant="ba-pm"
+             style="--ord-ba-pm:4">
+          <h4>Tools</h4>
+          <p>Toad for DB · Crystal Reports · JIRA · Confluence · Office suite</p>
+        </div>
+
+        <div class="skill-group" data-variant="cobol-dev"
+             style="--ord-cobol-dev:2">
+          <h4>DB &amp; Tools</h4>
+          <p>DB2 · Oracle (Ingenium) · Toad for DB · FileAid · Crystal Reports</p>
+        </div>
+
+        <div class="skill-group" data-variant="cobol-dev"
+             style="--ord-cobol-dev:3">
+          <h4>Debug</h4>
+          <p>Abend-AID · RDi Debugger · Production troubleshooting · Performance tuning</p>
+        </div>
+
+        <div class="skill-group" data-variant="general ba-pm cobol-dev"
+             style="--ord-general:5; --ord-ba-pm:5; --ord-cobol-dev:5">
+          <h4>Languages</h4>
+          <p>Tiếng Anh (Fluent) · Tiếng Pháp (Basic) · Tiếng Việt (Native)</p>
+        </div>
+
+      </div>
+    </section>
+    <!-- task 7 adds sections below -->
   </div>
   <script>
     const VARIANTS = ['general', 'ba-pm', 'cobol-dev'];
