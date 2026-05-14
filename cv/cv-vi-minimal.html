@@ -238,7 +238,56 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
   color: var(--text);
 }
 
-/* task 8 adds print styles below */
+/* Print */
+@media print {
+  @page { size: A4; margin: 0; }
+
+  html { font-size: 13.5px; }
+
+  body {
+    padding: 0;
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    max-width: none;
+    padding: 16mm 18mm;
+  }
+
+  .variant-tabs { display: none; }
+
+  a {
+    color: var(--text);
+    border-bottom: none;
+  }
+
+  .section { margin-bottom: var(--print-section-gap); }
+  .section-title { margin-bottom: 12px; }
+
+  .cv-header { margin-bottom: 20px; }
+  .cv-name { font-size: 32px; }
+  .cv-role { font-size: 14px; margin-bottom: 10px; }
+  .cv-contact { font-size: 11px; }
+
+  .summary p { font-size: 13px; line-height: 1.5; }
+  .work-entry { margin-bottom: 16px; }
+  .work-company { font-size: 15px; }
+  .work-period { font-size: 11px; }
+  .work-title { font-size: 12px; margin-bottom: 6px; }
+  .work-bullets li { font-size: 12px; line-height: 1.45; margin-bottom: 2px; }
+
+  .skill-group h4 { font-size: 12px; }
+  .skill-group p { font-size: 12px; line-height: 1.45; }
+  .skills-list { gap: 6px; }
+
+  .project-item { font-size: 12px; line-height: 1.45; }
+  .project-item .project-meta { font-size: 10px; }
+  .projects-list { gap: 6px; }
+
+  .edu-item, .languages-line { font-size: 12px; }
+}
 </style>
 </head>
 <body data-role="general">
