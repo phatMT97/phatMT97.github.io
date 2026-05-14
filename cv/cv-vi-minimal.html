@@ -108,7 +108,33 @@ a:hover { border-bottom-color: var(--accent); }
   border-bottom-color: var(--accent);
 }
 
-/* tasks 4-9 add more styles below */
+/* Section primitives */
+.section { margin-bottom: var(--section-gap); }
+.section-title {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text);
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--divider);
+}
+
+/* Variant filter */
+body[data-role="general"]   [data-variant]:not([data-variant~="general"])  { display: none; }
+body[data-role="ba-pm"]     [data-variant]:not([data-variant~="ba-pm"])    { display: none; }
+body[data-role="cobol-dev"] [data-variant]:not([data-variant~="cobol-dev"]){ display: none; }
+
+/* Summary */
+.summary p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+.summary strong { font-weight: 600; color: var(--text); }
+
+/* tasks 5-9 add more styles below */
 </style>
 </head>
 <body data-role="general">
@@ -131,7 +157,20 @@ a:hover { border-bottom-color: var(--accent); }
       <button class="variant-tab" data-role="ba-pm">BA / PM</button>
       <button class="variant-tab" data-role="cobol-dev">COBOL Dev</button>
     </nav>
-    <!-- tasks 4-7 add sections below -->
+
+    <section class="section summary">
+      <h2 class="section-title">Summary</h2>
+      <p data-variant="general">
+        Lập trình viên COBOL Senior với hơn <strong>7 năm kinh nghiệm</strong> trên IBM Mainframe (z/OS, COBOL, JCL, DB2). Đã làm việc với khách hàng bảo hiểm tại <strong>châu Âu và Nhật Bản</strong> suốt nhiều dự án production-grade. Hiện đóng vai trò <strong>cố vấn kỹ thuật</strong> cho dự án AI Agent về hiện đại hóa hệ thống legacy — kết hợp kiến thức mainframe sâu với công cụ AI/LLM hiện đại để hỗ trợ trích xuất logic nghiệp vụ và tạo tài liệu kỹ thuật.
+      </p>
+      <p data-variant="ba-pm">
+        Developer với 7+ năm kinh nghiệm phối hợp cross-functional team trên các dự án mainframe quy mô lớn cho <strong>khách hàng quốc tế</strong> (EU, Nhật). Quen với quy trình <strong>Agile / Scrum</strong> — đã trực tiếp tham gia sprint planning, demo khách hàng, requirement clarification và mentoring junior. Hiểu sâu nghiệp vụ <strong>bảo hiểm nhân thọ</strong>: vòng đời hợp đồng, claim processing, batch operations và SLA production.
+      </p>
+      <p data-variant="cobol-dev">
+        COBOL Developer 7+ năm trên IBM z/OS, mạnh về <strong>JCL/batch, DB2/SQL, CICS, VSAM</strong>. Kinh nghiệm production-grade với SLA nghiêm ngặt cho khách hàng bảo hiểm châu Âu (Capgemini, 4 năm) và hệ thống lõi <strong>Ingenium</strong> tại Dai-ichi Life Việt Nam (chạy trên Unix, database Oracle). Thành thạo <strong>Abend-AID, FileAid, RDi</strong> cho debug và tối ưu hiệu năng.
+      </p>
+    </section>
+    <!-- tasks 5-7 add sections below -->
   </div>
   <script>
     const VARIANTS = ['general', 'ba-pm', 'cobol-dev'];
