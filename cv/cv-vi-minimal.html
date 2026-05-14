@@ -81,7 +81,34 @@ a:hover { border-bottom-color: var(--accent); }
 .cv-contact a { color: var(--text-muted); }
 .cv-contact a:hover { color: var(--accent); }
 
-/* tasks 3-9 add more styles below */
+/* Variant tabs */
+.variant-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--divider);
+}
+.variant-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 8px 16px 10px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  margin-bottom: -1px;
+  letter-spacing: 0.3px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.variant-tab:hover { color: var(--text); }
+.variant-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* tasks 4-9 add more styles below */
 </style>
 </head>
 <body data-role="general">
@@ -99,10 +126,37 @@ a:hover { border-bottom-color: var(--accent); }
         <span>📍 TP. Hồ Chí Minh</span>
       </p>
     </header>
-    <!-- tasks 3-7 add sections below -->
+    <nav class="variant-tabs" aria-label="CV variant">
+      <button class="variant-tab" data-role="general">General</button>
+      <button class="variant-tab" data-role="ba-pm">BA / PM</button>
+      <button class="variant-tab" data-role="cobol-dev">COBOL Dev</button>
+    </nav>
+    <!-- tasks 4-7 add sections below -->
   </div>
   <script>
-    // task 3 adds JS here
+    const VARIANTS = ['general', 'ba-pm', 'cobol-dev'];
+
+    function setRole(role) {
+      if (!VARIANTS.includes(role)) role = 'general';
+      document.body.dataset.role = role;
+      document.querySelectorAll('.variant-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.role === role);
+      });
+      const url = new URL(window.location);
+      url.searchParams.set('role', role);
+      history.replaceState({}, '', url);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      setRole(params.get('role') || 'general');
+      document.querySelectorAll('.variant-tab').forEach(tab => {
+        tab.addEventListener('click', e => {
+          e.preventDefault();
+          setRole(tab.dataset.role);
+        });
+      });
+    });
   </script>
 </body>
 </html>
