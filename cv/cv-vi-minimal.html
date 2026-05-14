@@ -205,7 +205,40 @@ body[data-role="general"]   .skill-group { order: var(--ord-general,   99); }
 body[data-role="ba-pm"]     .skill-group { order: var(--ord-ba-pm,     99); }
 body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
 
-/* tasks 7-9 add more styles below */
+/* Projects */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.project-item {
+  font-size: 13px;
+  line-height: 1.55;
+}
+.project-item strong { font-weight: 600; }
+.project-item .project-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+/* Education */
+.edu-item { font-size: 13px; }
+.edu-item .edu-school { color: var(--text-muted); }
+.edu-item .edu-year {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Languages (single line) */
+.languages-line {
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* task 8 adds print styles below */
 </style>
 </head>
 <body data-role="general">
@@ -350,7 +383,43 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
 
       </div>
     </section>
-    <!-- task 7 adds sections below -->
+
+    <section class="section projects">
+      <h2 class="section-title">Projects &amp; Highlights</h2>
+      <div class="projects-list">
+        <p class="project-item">
+          <strong>AI Agent for COBOL Reverse-Engineering</strong>
+          <span class="project-meta">FPT AI Center · 2024–present</span><br>
+          Cố vấn kỹ thuật cho dự án dùng LLM trích xuất logic nghiệp vụ từ codebase COBOL 20+ năm tuổi của khách hàng Nhật.
+        </p>
+        <p class="project-item">
+          <strong>Ingenium Maintenance</strong>
+          <span class="project-meta">Dai-ichi Life VN · 2023–2024</span><br>
+          Bảo trì tính năng bảo hiểm nhân thọ trên hệ thống lõi chạy Unix/Oracle.
+        </p>
+        <p class="project-item">
+          <strong>EU Insurance Mainframe</strong>
+          <span class="project-meta">Capgemini · 2019–2023</span><br>
+          4 năm vận hành ứng dụng z/OS với SLA nghiêm ngặt cho khách hàng châu Âu.
+        </p>
+      </div>
+    </section>
+
+    <section class="section education">
+      <h2 class="section-title">Education</h2>
+      <p class="edu-item">
+        <strong>Kỹ sư Cơ điện tử</strong> ·
+        <span class="edu-school">Trường ĐH Nông Lâm TP.HCM</span> ·
+        <span class="edu-year">2015 – 2019</span>
+      </p>
+    </section>
+
+    <section class="section languages">
+      <h2 class="section-title">Languages</h2>
+      <p class="languages-line">
+        Tiếng Anh (Fluent) · Tiếng Pháp (Basic) · Tiếng Việt (Native)
+      </p>
+    </section>
   </div>
   <script>
     const VARIANTS = ['general', 'ba-pm', 'cobol-dev'];
