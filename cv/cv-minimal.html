@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mai Tan Phat – CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFFFFF;
+  --text: #1A1A1A;
+  --text-muted: #666666;
+  --accent: #1E3A5F;
+  --divider: #E5E5E5;
+
+  --font-serif: 'EB Garamond', 'Source Serif Pro', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --page-max: 720px;
+  --section-gap: 36px;
+  --print-section-gap: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 15px; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  padding: 64px 48px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: var(--page-max);
+  margin: 0 auto;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+}
+a:hover { border-bottom-color: var(--accent); }
+
+/* Header */
+.cv-header { margin-bottom: 28px; }
+
+.cv-name {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.cv-role {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.cv-contact {
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 14px;
+}
+.cv-contact span.sep { color: var(--divider); }
+.cv-contact a { color: var(--text-muted); }
+.cv-contact a:hover { color: var(--accent); }
+
+/* Variant tabs */
+.variant-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--divider);
+}
+.variant-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 8px 16px 10px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  margin-bottom: -1px;
+  letter-spacing: 0.3px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.variant-tab:hover { color: var(--text); }
+.variant-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Section primitives */
+.section { margin-bottom: var(--section-gap); }
+.section-title {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text);
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--divider);
+}
+
+/* Variant filter */
+body[data-role="general"]   [data-variant]:not([data-variant~="general"])  { display: none; }
+body[data-role="ba-pm"]     [data-variant]:not([data-variant~="ba-pm"])    { display: none; }
+body[data-role="cobol-dev"] [data-variant]:not([data-variant~="cobol-dev"]){ display: none; }
+
+/* Summary */
+.summary p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+.summary strong { font-weight: 600; color: var(--text); }
+
+/* Work Experience */
+.work-entry { margin-bottom: 22px; }
+.work-entry:last-child { margin-bottom: 0; }
+
+.work-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 2px;
+}
+.work-company {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 500;
+}
+.work-period {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.work-title {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.work-bullets {
+  list-style: none;
+  padding: 0;
+}
+.work-bullets li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.work-bullets li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+}
+.work-bullets strong { font-weight: 600; }
+
+/* Skills */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.skill-group h4 {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.skill-group p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* Per-variant order */
+body[data-role="general"]   .skill-group { order: var(--ord-general,   99); }
+body[data-role="ba-pm"]     .skill-group { order: var(--ord-ba-pm,     99); }
+body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
+
+/* Projects */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.project-item {
+  font-size: 13px;
+  line-height: 1.55;
+}
+.project-item strong { font-weight: 600; }
+.project-item .project-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+/* Education */
+.edu-item { font-size: 13px; }
+.edu-item .edu-school { color: var(--text-muted); }
+.edu-item .edu-year {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Languages (single line) */
+.languages-line {
+  font-size: 13px;
+  color: var(--text);
+}
+
+/* Print */
+@media print {
+  @page { size: A4; margin: 0; }
+
+  html { font-size: 12.5px; }
+
+  body {
+    padding: 0;
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    max-width: none;
+    padding: 12mm 16mm;
+  }
+
+  .variant-tabs { display: none; }
+
+  a {
+    color: var(--text);
+    border-bottom: none;
+  }
+
+  .section { margin-bottom: var(--print-section-gap); }
+  .section-title { margin-bottom: 8px; padding-bottom: 4px; font-size: 10px; }
+
+  .cv-header { margin-bottom: 14px; }
+  .cv-name { font-size: 28px; margin-bottom: 4px; }
+  .cv-role { font-size: 13px; margin-bottom: 8px; }
+  .cv-contact { font-size: 10.5px; }
+
+  .summary p { font-size: 12px; line-height: 1.45; }
+  .work-entry { margin-bottom: 6px; }
+  .work-company { font-size: 14px; }
+  .work-period { font-size: 10px; }
+  .work-title { font-size: 11px; margin-bottom: 4px; }
+  .work-bullets li { font-size: 11px; line-height: 1.4; margin-bottom: 1px; padding-left: 12px; }
+
+  .skill-group h4 { font-size: 11px; }
+  .skill-group p { font-size: 11px; line-height: 1.4; }
+  .skills-list { gap: 4px; }
+
+  .project-item { font-size: 11px; line-height: 1.4; }
+  .project-item .project-meta { font-size: 9.5px; }
+  .projects-list { gap: 4px; }
+
+  .edu-item, .languages-line { font-size: 11px; }
+}
+</style>
+</head>
+<body data-role="general">
+  <div class="page">
+    <header class="cv-header">
+      <h1 class="cv-name">Mai Tan Phat</h1>
+      <p class="cv-role">Senior COBOL Developer &amp; AI Tinker</p>
+      <p class="cv-contact">
+        <a href="mailto:phatmtp1997@gmail.com">✉ phatmtp1997@gmail.com</a>
+        <span class="sep">·</span>
+        <a href="tel:+84868226707">✆ +84 868 226 707</a>
+        <span class="sep">·</span>
+        <a href="https://www.linkedin.com/in/ph%C3%A1t-mai-t%E1%BA%A5n-4b199a2a2/" target="_blank" rel="noopener">in linkedin</a>
+        <span class="sep">·</span>
+        <span>📍 Ho Chi Minh City, Vietnam</span>
+      </p>
+    </header>
+    <nav class="variant-tabs" aria-label="CV variant">
+      <button class="variant-tab" data-role="general">General</button>
+      <button class="variant-tab" data-role="ba-pm">BA / PM</button>
+      <button class="variant-tab" data-role="cobol-dev">COBOL Dev</button>
+    </nav>
+
+    <section class="section summary">
+      <h2 class="section-title">Summary</h2>
+      <p data-variant="general">
+        Senior COBOL Developer with <strong>7+ years</strong> of experience on IBM Mainframe (z/OS, COBOL, JCL, DB2). Worked with insurance clients in <strong>Europe and Japan</strong> across multiple production-grade engagements. Currently serving as <strong>technical advisor</strong> on an AI Agent project for legacy modernization — combining deep mainframe knowledge with modern AI/LLM tooling to support business logic extraction and technical documentation.
+      </p>
+      <p data-variant="ba-pm">
+        Developer with 7+ years coordinating cross-functional teams on large-scale mainframe projects for <strong>international clients</strong> (EU, Japan). Familiar with <strong>Agile / Scrum</strong> — directly involved in sprint planning, client demos, requirement clarification, and mentoring juniors. Deep understanding of <strong>life insurance</strong> domain: policy lifecycle, claim processing, batch operations, and production SLAs.
+      </p>
+      <p data-variant="cobol-dev">
+        COBOL Developer with 7+ years on IBM z/OS, strong in <strong>JCL/batch, DB2/SQL, CICS, VSAM</strong>. Production-grade experience under strict SLAs for European insurance clients (Capgemini, 4 years) and the <strong>Ingenium</strong> core system at Dai-ichi Life Vietnam (running on Unix with an Oracle database). Proficient with <strong>Abend-AID, FileAid, RDi</strong> for debugging and performance tuning.
+      </p>
+    </section>
+
+    <section class="section work">
+      <h2 class="section-title">Work Experience</h2>
+
+      <div class="work-entry">
+        <div class="work-head">
+          <h3 class="work-company">FPT Software — AI Center</h3>
+          <span class="work-period">04/2024 – Present</span>
+        </div>
+        <p class="work-title">Senior COBOL Developer &amp; AI Tinker</p>
+        <ul class="work-bullets">
+          <li data-variant="general ba-pm cobol-dev">Served as <strong>technical advisor</strong> on an AI Agent project analyzing legacy COBOL systems for Japanese enterprise clients.</li>
+          <li data-variant="general cobol-dev">Supported DB2 query tuning and COBOL code review using <strong>ChatGPT, Gemini, and custom AI agents</strong>.</li>
+          <li data-variant="general ba-pm">Supported sprint planning and client demos for Japanese stakeholders; coordinated with Dev/QA/BA/BrSE on delivery tracking.</li>
+          <li data-variant="ba-pm">Mentored junior engineers on COBOL, Agile process, and AI-assisted development workflows.</li>
+          <li data-variant="cobol-dev">Advised on deploying NLP tools to keep documentation and source code in sync across large-scale mainframe systems.</li>
+        </ul>
+      </div>
+
+      <div class="work-entry">
+        <div class="work-head">
+          <h3 class="work-company">Dai-ichi Life Insurance Vietnam</h3>
+          <span class="work-period">05/2023 – 04/2024</span>
+        </div>
+        <p class="work-title">COBOL Developer — Ingenium Core System</p>
+        <ul class="work-bullets">
+          <li data-variant="general ba-pm cobol-dev">Developed and maintained business features on the <strong>Ingenium</strong> core insurance system in COBOL (Unix environment, Oracle database).</li>
+          <li data-variant="general cobol-dev">Fixed production issues, upgraded logic per change requests, managed daily batch schedules.</li>
+          <li data-variant="general ba-pm">Built deep understanding of <strong>life insurance</strong> domain — policy lifecycle, claim processing, premium calculations.</li>
+          <li data-variant="ba-pm">Coordinated with business teams to clarify requirements and deliver features on schedule.</li>
+          <li data-variant="cobol-dev">Queried and validated policy data with <strong>Toad for DB</strong>; maintained the report-generation module.</li>
+        </ul>
+      </div>
+
+      <div class="work-entry">
+        <div class="work-head">
+          <h3 class="work-company">Capgemini Vietnam</h3>
+          <span class="work-period">04/2019 – 04/2023</span>
+        </div>
+        <p class="work-title">COBOL Developer — EU Insurance Mainframe</p>
+        <ul class="work-bullets">
+          <li data-variant="general ba-pm cobol-dev">Maintained and developed <strong>large-scale IBM Mainframe z/OS applications</strong> for European insurance clients for 4 years.</li>
+          <li data-variant="general cobol-dev">Handled complex production fixes and JCL batch support under strict SLAs.</li>
+          <li data-variant="general cobol-dev">Used <strong>Abend-AID</strong> for production incident root-cause analysis; tuned DB2 queries and COBOL program performance.</li>
+          <li data-variant="ba-pm">Collaborated with European teams across time zones to ensure on-time delivery.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-list">
+
+        <div class="skill-group" data-variant="general cobol-dev"
+             style="--ord-general:1; --ord-cobol-dev:1">
+          <h4>Mainframe</h4>
+          <p>COBOL · JCL/Batch · DB2/SQL · CICS · VSAM · z/OS · TSO/ISPF</p>
+        </div>
+
+        <div class="skill-group" data-variant="general cobol-dev"
+             style="--ord-general:2; --ord-cobol-dev:4">
+          <h4>AI / Tools</h4>
+          <p>AI Agents · LLMs (GPT, Gemini) · Prompt Engineering · Legacy Modernization · Code review automation</p>
+        </div>
+
+        <div class="skill-group" data-variant="general ba-pm"
+             style="--ord-general:3; --ord-ba-pm:1">
+          <h4>BA &amp; Process</h4>
+          <p>Agile / Scrum · Sprint Planning · Requirement Clarification · Backlog Management · PSPO I</p>
+        </div>
+
+        <div class="skill-group" data-variant="general ba-pm"
+             style="--ord-general:4; --ord-ba-pm:2">
+          <h4>Soft Skills</h4>
+          <p>Mentoring · Cross-functional teamwork · Stakeholder Communication · Client demo (JP, EU)</p>
+        </div>
+
+        <div class="skill-group" data-variant="ba-pm"
+             style="--ord-ba-pm:3">
+          <h4>Domain — Insurance</h4>
+          <p>Policy lifecycle · Claim processing · Batch operations · Life insurance</p>
+        </div>
+
+        <div class="skill-group" data-variant="ba-pm"
+             style="--ord-ba-pm:4">
+          <h4>Tools</h4>
+          <p>Toad for DB · Crystal Reports · JIRA · Confluence · Office suite</p>
+        </div>
+
+        <div class="skill-group" data-variant="cobol-dev"
+             style="--ord-cobol-dev:2">
+          <h4>DB &amp; Tools</h4>
+          <p>DB2 · Oracle (Ingenium) · Toad for DB · FileAid · Crystal Reports</p>
+        </div>
+
+        <div class="skill-group" data-variant="cobol-dev"
+             style="--ord-cobol-dev:3">
+          <h4>Debug</h4>
+          <p>Abend-AID · RDi Debugger · Production troubleshooting · Performance tuning</p>
+        </div>
+
+        <div class="skill-group" data-variant="general ba-pm cobol-dev"
+             style="--ord-general:5; --ord-ba-pm:5; --ord-cobol-dev:5">
+          <h4>Languages</h4>
+          <p>English (Fluent) · French (Basic) · Vietnamese (Native)</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section projects">
+      <h2 class="section-title">Projects &amp; Highlights</h2>
+      <div class="projects-list">
+        <p class="project-item">
+          <strong>AI Agent for COBOL Reverse-Engineering</strong>
+          <span class="project-meta">FPT AI Center · 2024–present</span><br>
+          Technical advisor for an LLM-based project extracting business logic from a 20+ year old COBOL codebase for a Japanese client.
+        </p>
+        <p class="project-item">
+          <strong>Ingenium Maintenance</strong>
+          <span class="project-meta">Dai-ichi Life VN · 2023–2024</span><br>
+          Maintained life-insurance features on the core system running on Unix with Oracle.
+        </p>
+        <p class="project-item">
+          <strong>EU Insurance Mainframe</strong>
+          <span class="project-meta">Capgemini · 2019–2023</span><br>
+          4 years operating z/OS applications under strict SLAs for European clients.
+        </p>
+      </div>
+    </section>
+
+    <section class="section education">
+      <h2 class="section-title">Education</h2>
+      <p class="edu-item">
+        <strong>B.E. in Mechatronics Engineering</strong> ·
+        <span class="edu-school">Nong Lam University, Ho Chi Minh City</span> ·
+        <span class="edu-year">2015 – 2019</span>
+      </p>
+    </section>
+
+    <section class="section languages">
+      <h2 class="section-title">Languages</h2>
+      <p class="languages-line">
+        English (Fluent) · French (Basic) · Vietnamese (Native)
+      </p>
+    </section>
+  </div>
+  <script>
+    const VARIANTS = ['general', 'ba-pm', 'cobol-dev'];
+
+    function setRole(role) {
+      if (!VARIANTS.includes(role)) role = 'general';
+      document.body.dataset.role = role;
+      document.querySelectorAll('.variant-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.role === role);
+      });
+      const url = new URL(window.location);
+      url.searchParams.set('role', role);
+      history.replaceState({}, '', url);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      setRole(params.get('role') || 'general');
+      document.querySelectorAll('.variant-tab').forEach(tab => {
+        tab.addEventListener('click', e => {
+          e.preventDefault();
+          setRole(tab.dataset.role);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
