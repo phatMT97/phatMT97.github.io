@@ -10,15 +10,14 @@
 
   var docEl = document.documentElement;
   var LENS_KEY = 'mtp-lens';
-  var LENSES = ['ba', 'cobol', 'general'];
+  var LENSES = ['ba', 'cobol'];
 
   /* ---------------- CV file map ---------------- */
   var CV_FILES = {
-    ba:      { en: 'Mai-Tan-Phat-CV-Minimal-BA-PM.pdf',     vi: 'Mai-Tan-Phat-CV-Minimal-BA-PM-VI.pdf' },
-    cobol:   { en: 'Mai-Tan-Phat-CV-Minimal-COBOL-Dev.pdf', vi: 'Mai-Tan-Phat-CV-Minimal-COBOL-Dev-VI.pdf' },
-    general: { en: 'Mai-Tan-Phat-CV-Minimal-General.pdf',   vi: 'Mai-Tan-Phat-CV-Minimal-General-VI.pdf' }
+    ba:      { en: 'Mai-Tan-Phat-CV-BA-AI.pdf',     vi: 'Mai-Tan-Phat-CV-BA-AI-VI.pdf' },
+    cobol:   { en: 'Mai-Tan-Phat-CV-COBOL-Dev.pdf', vi: 'Mai-Tan-Phat-CV-COBOL-Dev-VI.pdf' }
   };
-  var CV_LABELS = { ba: 'BA / Vice PM', cobol: 'COBOL Developer', general: 'General' };
+  var CV_LABELS = { ba: 'BA — AI / LLM', cobol: 'COBOL Developer' };
 
   /* ---------------- state ---------------- */
   function readLens() {
@@ -82,7 +81,7 @@
       btn.setAttribute('aria-pressed', String(btn.getAttribute('data-cv-lang') === cvLang));
     });
   }
-  function selectCvRole(role) { cvRole = role; refreshCv(); }
+  function selectCvRole(role) { cvRole = CV_FILES[role] ? role : 'ba'; refreshCv(); }
 
   cvRoleButtons.forEach(function (btn) {
     btn.addEventListener('click', function () { selectCvRole(btn.getAttribute('data-cv-role')); });
