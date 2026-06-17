@@ -1,378 +1,369 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="lens-general">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Mai Tan Phat - COBOL Developer & AI Tinker</title>
-  <meta name="description" content="Portfolio of Mai Tan Phat, a Senior COBOL Developer specializing in IBM Mainframe systems and AI-powered legacy modernization.">
-  
+
+  <title>Mai Tan Phat - Business Analyst, Vice PM & COBOL Developer</title>
+  <meta name="description" content="Mai Tan Phat - moving from IBM mainframe COBOL into business analysis and delivery. Download role-specific CVs (BA/PM, COBOL Dev, General) in English or Vietnamese.">
+
+  <!-- Set up JS + restore saved lens before paint to avoid a flash -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      var lens = 'ba';
+      try { lens = localStorage.getItem('mtp-lens') || 'ba'; } catch (e) {}
+      if (['ba', 'cobol', 'general'].indexOf(lens) === -1) lens = 'ba';
+      d.classList.remove('lens-general');
+      d.classList.add('lens-' + lens);
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css?v=5">
-  <style>
-    /* Scroll Progress Bar */
-    .scroll-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--pink), var(--purple), var(--teal));
-      z-index: 200;
-      transform-origin: left;
-      transform: scaleX(0);
-    }
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    /* Particle Canvas */
-    .particle-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* 3D Tilt perspective */
-    .skill-card {
-      transform-style: preserve-3d;
-      perspective: 800px;
-    }
-
-    .skill-card .skill-category,
-    .skill-card .skill-list,
-    .skill-card .tag-cloud {
-      transform: translateZ(20px);
-    }
-
-    /* Magnetic button */
-    .social-btn {
-      will-change: transform;
-    }
-
-    /* Hero name split chars */
-    .hero-name .char {
-      display: inline-block;
-      will-change: transform;
-    }
-
-    /* Glow pulse on highlight-tag */
-    .highlight-tag {
-      animation: glowPulse 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes glowPulse {
-      from { box-shadow: 2px 2px 0px var(--border-dark); }
-      to { box-shadow: 2px 2px 12px var(--pink), 2px 2px 0px var(--border-dark); }
-    }
-
-    /* Cursor trail dot */
-    .cursor-trail {
-      position: fixed;
-      width: 8px;
-      height: 8px;
-      background: var(--pink);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      mix-blend-mode: difference;
-      opacity: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- Scroll Progress -->
-  <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- Cursor Trail -->
-  <div class="cursor-trail" id="cursorTrail"></div>
-
-  <!-- Particle Canvas -->
-  <canvas class="particle-canvas" id="particleCanvas"></canvas>
-
-  <!-- Background SVG Blobs -->
-  <svg class="bg-blob blob-1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#FF6B6B" d="M47.5,-59.8C61.4,-51.5,72.4,-37.9,78.2,-22.1C84,-6.2,84.7,11.8,77.7,27.1C70.6,42.4,55.9,55.1,40.1,64.2C24.3,73.4,7.4,79,-9.2,77.8C-25.7,76.6,-41.8,68.5,-55.1,56.5C-68.5,44.4,-79.1,28.4,-81.7,11.2C-84.3,-6,-78.9,-24.3,-68,-38.3C-57.2,-52.3,-41,-62.1,-25.6,-66.2C-10.2,-70.3,4.4,-68.8,17.9,-64.1L47.5,-59.8Z" transform="translate(100 100)" />
-  </svg>
-  <svg class="bg-blob blob-2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#4ECDC4" d="M60.1,-60.9C76.9,-46.8,88.9,-26.6,89.5,-5.8C90.1,14.9,79.4,36.2,63.1,51.8C46.8,67.4,25,77.3,1.4,75.6C-22.1,73.9,-44.3,60.6,-59.4,43C-74.5,25.4,-82.6,3.4,-78.3,-15.7C-74,-34.9,-57.4,-51.2,-39.8,-65.7C-22.1,-80.1,-3.4,-92.7,13.7,-88.9C30.8,-85.2,43.3,-75,60.1,-60.9Z" transform="translate(100 100)" />
-  </svg>
-  <svg class="bg-blob blob-3" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#FFE66D" d="M48.8,-53.4C60.5,-40.4,65.3,-22.3,66.8,-4.2C68.4,13.8,66.7,31.9,57.1,44.9C47.4,57.9,29.9,65.8,11.4,66.8C-7,67.8,-24.5,61.9,-38.4,50.3C-52.2,38.7,-62.5,21.5,-64.5,3.3C-66.6,-14.9,-60.5,-34.2,-48.3,-46.9C-36,-59.6,-18,-65.8,-0.2,-65.5C17.5,-65.2,35.1,-58.5,48.8,-53.4Z" transform="translate(100 100)" />
-  </svg>
-
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <nav class="navbar" id="navbar">
-    <div class="nav-container max-w-5xl">
-      <a href="#" class="logo-monogram" aria-label="Home">MTP_</a>
-      <div class="nav-links">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Toolkit</a>
-        <a href="#experience" class="nav-link">Journey</a>
-        <a href="#contact" class="nav-link">Say Hi!</a>
-      </div>
+  <!-- ============================ TOP BAR ============================ -->
+  <header class="topbar" id="topbar">
+    <div class="wrap topbar__inner">
+      <a href="#main" class="monogram" aria-label="Mai Tan Phat, home">MTP_</a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#cv">CV</a>
+        <a href="#vkey">VKey</a>
+      </nav>
+      <a href="#cv" class="btn btn--primary btn-sm">Download CV</a>
     </div>
-  </nav>
+  </header>
 
-  <main id="main-content">
-    
-    <header id="about" class="section hero-section">
-      <div class="container max-w-5xl">
-        <div class="hero-layout">
-          <div class="hero-content">
-            <p class="greeting">👋 Hi! I'm</p>
-            <h1 class="hero-name">Mai Tan Phat</h1>
-            <h2 class="hero-role">Senior <span class="highlight-text pink-bg">COBOL Developer</span> & AI Tinker</h2>
-            
-            <div class="fun-box" id="hero-box">
-              <h3 class="box-title">What I do</h3>
-              <p class="summary-text">
-                I spend my days bridging the gap between rock-solid <strong>IBM Mainframes</strong> (z/OS, COBOL, JCL, DB2) and the future of tech. Over the last <strong>7+ years</strong>, I've modernized heavy-duty enterprise systems for global insurance and banking clients.
-              </p>
-              <div class="sticker-callout">
-                <span class="sticker-icon">✨</span>
-                <p>Secret weapon: Using <strong>AI Agents & LLMs</strong> to automate legacy code analysis and make mainframe development a breeze.</p>
-              </div>
-            </div>
-          </div>
-          <div class="hero-art">
-            <!-- Terminal + AI Circuit Illustration -->
-            <svg class="hero-svg" viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">
-              <!-- Monitor body -->
-              <rect x="30" y="20" width="260" height="200" rx="16" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="4" class="art-rect" />
-              <!-- Screen -->
-              <rect x="42" y="32" width="236" height="160" rx="8" fill="#2D2B55" />
-              <!-- Screen glow -->
-              <rect x="42" y="32" width="236" height="160" rx="8" fill="url(#screenGlow)" class="art-screen-glow" opacity="0.3" />
+  <main id="main">
 
-              <!-- Code lines on screen -->
-              <g class="art-code-lines">
-                <text x="58" y="62" font-family="monospace" font-size="11" fill="#4ECDC4" class="code-line-1">IDENTIFICATION DIVISION.</text>
-                <text x="58" y="80" font-family="monospace" font-size="11" fill="#FFE66D" class="code-line-2">PROGRAM-ID. LEGACY-AI.</text>
-                <text x="58" y="98" font-family="monospace" font-size="11" fill="#FF6B6B" class="code-line-3">PROCEDURE DIVISION.</text>
-                <text x="58" y="116" font-family="monospace" font-size="11" fill="#FFFFFF" opacity="0.7" class="code-line-4">    PERFORM MODERNIZE</text>
-                <text x="58" y="134" font-family="monospace" font-size="11" fill="#FFFFFF" opacity="0.7" class="code-line-5">    CALL 'AI-AGENT'</text>
-                <text x="58" y="152" font-family="monospace" font-size="11" fill="#4ECDC4" class="code-line-6">    STOP RUN.</text>
-              </g>
-
-              <!-- Blinking cursor -->
-              <rect x="155" y="143" width="8" height="14" fill="#FFE66D" class="art-cursor" />
-
-              <!-- Terminal dots (top bar) -->
-              <circle cx="58" cy="40" r="4" fill="#FF6B6B" />
-              <circle cx="72" cy="40" r="4" fill="#FFE66D" />
-              <circle cx="86" cy="40" r="4" fill="#4ECDC4" />
-
-              <!-- Monitor stand -->
-              <rect x="130" y="220" width="60" height="20" rx="4" fill="#1A1A1A" />
-              <rect x="110" y="236" width="100" height="10" rx="5" fill="#1A1A1A" />
-
-              <!-- AI Circuit nodes (left side) -->
-              <g class="art-circuit-left">
-                <line x1="30" y1="70" x2="8" y2="55" stroke="#4ECDC4" stroke-width="3" stroke-linecap="round" />
-                <circle cx="5" cy="52" r="6" fill="none" stroke="#4ECDC4" stroke-width="2.5" />
-                <line x1="30" y1="120" x2="0" y2="120" stroke="#4ECDC4" stroke-width="3" stroke-linecap="round" />
-                <circle cx="-3" cy="120" r="6" fill="none" stroke="#4ECDC4" stroke-width="2.5" />
-                <line x1="30" y1="170" x2="8" y2="185" stroke="#4ECDC4" stroke-width="3" stroke-linecap="round" />
-                <circle cx="5" cy="188" r="6" fill="none" stroke="#4ECDC4" stroke-width="2.5" />
-              </g>
-
-              <!-- AI Circuit nodes (right side) -->
-              <g class="art-circuit-right">
-                <line x1="290" y1="70" x2="312" y2="55" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round" />
-                <rect x="306" y="46" width="12" height="12" rx="2" fill="none" stroke="#FF6B6B" stroke-width="2.5" />
-                <line x1="290" y1="120" x2="318" y2="120" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round" />
-                <rect x="312" y="112" width="12" height="12" rx="2" fill="none" stroke="#FF6B6B" stroke-width="2.5" />
-                <line x1="290" y1="170" x2="312" y2="185" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round" />
-                <rect x="306" y="180" width="12" height="12" rx="2" fill="none" stroke="#FF6B6B" stroke-width="2.5" />
-              </g>
-
-              <!-- AI brain icon (top center) -->
-              <g class="art-brain" transform="translate(160, 8)">
-                <path d="M-8,-2 C-8,-8 -4,-12 0,-12 C4,-12 8,-8 8,-2 C12,-2 14,2 12,6 C14,8 12,12 8,12 L-8,12 C-12,12 -14,8 -12,6 C-14,2 -12,-2 -8,-2Z" fill="#FFE66D" stroke="#1A1A1A" stroke-width="2" />
-                <line x1="-3" y1="-4" x2="-3" y2="8" stroke="#1A1A1A" stroke-width="1.5" />
-                <line x1="3" y1="-4" x2="3" y2="8" stroke="#1A1A1A" stroke-width="1.5" />
-                <line x1="-6" y1="2" x2="6" y2="2" stroke="#1A1A1A" stroke-width="1.5" />
-              </g>
-
-              <!-- Gradient defs -->
-              <defs>
-                <linearGradient id="screenGlow" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#4ECDC4" />
-                  <stop offset="100%" stop-color="transparent" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
+    <!-- ============================ HERO ============================ -->
+    <section class="hero wrap">
+      <div class="lensbar">
+        <span class="kicker lensbar__label">View this page as</span>
+        <div class="segmented" role="group" aria-label="Choose a viewpoint">
+          <button type="button" data-lens-btn="ba" aria-pressed="true">BA / Vice PM</button>
+          <button type="button" data-lens-btn="cobol" aria-pressed="false">COBOL Dev</button>
+          <button type="button" data-lens-btn="general" aria-pressed="false">General</button>
         </div>
       </div>
-    </header>
 
-    <div class="section-divider wave-divider">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,120.22,192,106.67,236.4,96.89,279.4,76.5,321.39,56.44Z" class="shape-fill"></path>
-      </svg>
-    </div>
+      <div class="hero__grid">
+        <div class="hero__content">
+          <p class="hero__role">
+            <span class="lensable" data-lens="ba">Business Analyst &amp; Vice Project Manager</span>
+            <span class="lensable" data-lens="cobol">Senior COBOL Developer</span>
+            <span class="lensable" data-lens="general">Business Analyst, Vice PM &amp; COBOL Developer</span>
+          </p>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section skills-section">
-      <div class="container max-w-5xl">
-        <h2 class="section-title">My Toolkit <span class="handwritten-accent">stuff I use</span></h2>
-        
-        <div class="skills-grid">
-          <!-- Stack 1: Mainframe -->
-          <div class="skill-card br-pink">
-            <h3 class="skill-category">Mainframe 🦕</h3>
-            <ul class="skill-list" aria-label="Mainframe Stack Skills">
-              <li><span>COBOL</span> <strong class="pill">Expert</strong></li>
-              <li><span>JCL / Batch</span> <strong class="pill">Expert</strong></li>
-              <li><span>DB2 / SQL</span> <strong class="pill">Expert</strong></li>
-              <li><span>IBM z/OS</span> <strong class="pill">Pro</strong></li>
-            </ul>
+          <h1 class="hero__name">Mai Tan Phat</h1>
+
+          <p class="hero__lead lensable" data-lens="ba">
+            Seven years deep in large-scale mainframe delivery, now moving into business
+            analysis and project management for international teams.
+          </p>
+          <p class="hero__lead lensable" data-lens="cobol">
+            COBOL developer with seven years on IBM z/OS, building and stabilising
+            core insurance systems for European and Japanese clients.
+          </p>
+          <p class="hero__lead lensable" data-lens="general">
+            From IBM mainframe COBOL to business analysis and delivery, pairing deep
+            legacy knowledge with modern AI tooling.
+          </p>
+
+          <div class="hero__cta">
+            <a href="#cv" class="btn btn--primary">Download CV</a>
+            <a href="#contact" class="btn btn--ghost">Get in touch</a>
           </div>
 
-          <!-- Stack 2: Tools -->
-          <div class="skill-card br-teal">
-            <h3 class="skill-category">Tools & Debug 🛠️</h3>
-            <div class="tag-cloud">
-              <span class="tag">FileAid</span>
-              <span class="tag">Abend-AID</span>
-              <span class="tag">RDi Debugger</span>
-              <span class="tag">Toad for DB</span>
+          <p class="hero__status">Currently a technical advisor at FPT AI Center. <strong>Open to BA / PM roles.</strong></p>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__num">7+ yrs</div>
+              <div class="stat__label">Mainframe delivery</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">VN / JP / EU</div>
+              <div class="stat__label">Client markets</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">PSPO I</div>
+              <div class="stat__label">Scrum Product Owner</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="idcard" aria-label="Profile summary">
+          <div class="idcard__mono" aria-hidden="true">P</div>
+          <dl>
+            <dt>Role</dt>
+            <dd>
+              <span class="lensable" data-lens="ba">BA / Vice PM</span>
+              <span class="lensable" data-lens="cobol">COBOL Developer</span>
+              <span class="lensable" data-lens="general">BA / PM / Dev</span>
+            </dd>
+            <dt>Based in</dt><dd>Vietnam</dd>
+            <dt>Experience</dt><dd>7+ years</dd>
+            <dt>Languages</dt><dd>EN fluent, FR basic</dd>
+            <dt>Focus</dt><dd>Legacy to product</dd>
+          </dl>
+          <div class="idcard__links">
+            <a href="mailto:phatmtp1997@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/ph%C3%A1t-mai-t%E1%BA%A5n-4b199a2a2/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="#cv">CV</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============================ ABOUT ============================ -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="section__title">About</h2>
+        </div>
+        <p class="about__body reveal lensable" data-lens="ba">
+          I spent seven-plus years on large mainframe programs for clients in Europe and Japan,
+          and I am now moving into <strong>business analysis and delivery</strong>. I work
+          comfortably in <strong>Agile and Scrum</strong>, from sprint planning and client demos
+          to requirement clarification and mentoring. Years inside life-insurance systems gave me a
+          real grasp of the domain: policy lifecycle, claims, batch operations and production SLAs.
+        </p>
+        <p class="about__body reveal lensable" data-lens="cobol">
+          I am a <strong>COBOL developer</strong> with seven-plus years on IBM z/OS, strong in
+          JCL and batch, DB2 and SQL, CICS and VSAM. I have delivered production-grade work under
+          strict SLAs for European insurance at Capgemini and on the <strong>Ingenium</strong> core
+          at Dai-ichi Life Vietnam, and I am fluent with Abend-AID, FileAid and RDi.
+        </p>
+        <p class="about__body reveal lensable" data-lens="general">
+          I am a senior COBOL developer with seven-plus years on IBM mainframe, now pivoting toward
+          <strong>BA and Vice PM</strong> work. I am currently a <strong>technical advisor</strong>
+          on an AI-agent project for legacy modernisation, pairing deep mainframe knowledge with
+          modern AI and LLM tooling to support code analysis and documentation.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================ EXPERIENCE ============================ -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="section__title">Experience</h2>
+        </div>
+
+        <div class="exp">
+          <article class="exp__item reveal">
+            <div class="exp__period">04/2024 - Present</div>
+            <div>
+              <h3 class="exp__role">Technical Advisor, COBOL &amp; AI</h3>
+              <div class="exp__org">FPT Software, AI Center</div>
+              <ul class="exp__bullets">
+                <li class="lensable" data-lens="ba cobol general">Technical advisor on an AI-agent project for COBOL legacy modernisation.</li>
+                <li class="lensable" data-lens="cobol general">Support DB2 query optimisation and COBOL review with ChatGPT, Gemini and custom agents.</li>
+                <li class="lensable" data-lens="ba general">Help with sprint planning and client demos; coordinate across Dev, QA, BA and BrSE.</li>
+                <li class="lensable" data-lens="ba">Mentor junior members on COBOL, Agile and AI-assisted development.</li>
+                <li class="lensable" data-lens="cobol">Advise on NLP tooling to keep documentation and source consistent on large mainframe systems.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="exp__item reveal">
+            <div class="exp__period">05/2023 - 04/2024</div>
+            <div>
+              <h3 class="exp__role">COBOL Developer, Ingenium</h3>
+              <div class="exp__org">Dai-ichi Life Insurance Vietnam</div>
+              <ul class="exp__bullets">
+                <li class="lensable" data-lens="ba cobol general">Built and maintained insurance business features on the Ingenium core in COBOL (Unix, Oracle).</li>
+                <li class="lensable" data-lens="cobol general">Fixed production issues, updated logic for change requests and managed daily batch schedules.</li>
+                <li class="lensable" data-lens="ba general">Worked deep in the life-insurance domain: policy lifecycle, claims and premium calculation.</li>
+                <li class="lensable" data-lens="ba">Partnered with the business team to clarify requirements and deliver on schedule.</li>
+                <li class="lensable" data-lens="cobol">Queried and verified policy data with Toad, maintained report-generation modules.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="exp__item reveal">
+            <div class="exp__period">04/2019 - 04/2023</div>
+            <div>
+              <h3 class="exp__role">COBOL Developer</h3>
+              <div class="exp__org">Capgemini Vietnam</div>
+              <ul class="exp__bullets">
+                <li class="lensable" data-lens="ba cobol general">Maintained and developed large-scale IBM z/OS applications for European insurance clients across four years.</li>
+                <li class="lensable" data-lens="cobol general">Handled complex production fixes and batch JCL under strict SLAs.</li>
+                <li class="lensable" data-lens="cobol">Used Abend-AID for incident analysis; tuned DB2 queries and COBOL performance.</li>
+                <li class="lensable" data-lens="ba general">Collaborated with European teams across time zones to deliver on schedule.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ TOOLKIT ============================ -->
+    <section class="section" id="toolkit">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="section__title">Toolkit</h2>
+          <p class="section__intro">The active viewpoint moves the most relevant group to the front.</p>
+        </div>
+
+        <div class="toolkit">
+          <div class="tk-group tk-group--ba reveal">
+            <h3>Business &amp; delivery</h3>
+            <div class="tk-tags">
+              <span>Requirements analysis</span>
+              <span>Stakeholder management</span>
+              <span>Agile / Scrum</span>
+              <span>PSPO I</span>
+              <span>Documentation</span>
+              <span>Cross-functional coordination</span>
             </div>
           </div>
 
-          <!-- Stack 3: AI -->
-          <div class="skill-card br-yellow">
-            <h3 class="skill-category">AI Magic 🪄</h3>
-            <div class="tag-cloud">
-              <span class="tag highlight-tag">AI Agents</span>
-              <span class="tag highlight-tag">LLMs (Gemini, GPT)</span>
-              <span class="tag highlight-tag">Modernization</span>
-              <span class="tag">Prompt Eng.</span>
+          <div class="tk-group tk-group--cobol reveal">
+            <h3>Mainframe</h3>
+            <div class="tk-tags">
+              <span>COBOL</span>
+              <span>JCL / Batch</span>
+              <span>DB2 / SQL</span>
+              <span>IBM z/OS</span>
+              <span>CICS / VSAM</span>
+              <span>Abend-AID</span>
+              <span>FileAid</span>
+              <span>RDi</span>
             </div>
           </div>
-          
-          <!-- Stack 4: Languages -->
-          <div class="skill-card br-purple">
-            <h3 class="skill-category">Soft Skills & Lingo 🗣️</h3>
-            <ul class="skill-list">
-              <li><span>Agile/Scrum</span> <strong class="pill">PSPO I</strong></li>
-              <li><span>English</span> <strong class="pill">Fluent</strong></li>
-              <li><span>French</span> <strong class="pill">Basic</strong></li>
-              <li><span>Team Mentorship</span></li>
-            </ul>
+
+          <div class="tk-group tk-group--shared reveal">
+            <h3>AI &amp; modernisation</h3>
+            <div class="tk-tags">
+              <span>AI agents &amp; LLMs</span>
+              <span>Legacy modernisation</span>
+              <span>Prompt engineering</span>
+              <span>English (fluent)</span>
+              <span>French (basic)</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="section-divider slant-divider">
-      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-         <polygon points="1200,0 1200,120 0,120" class="shape-fill"></polygon>
-      </svg>
-    </div>
+    <!-- ============================ CV HUB ============================ -->
+    <section class="section" id="cv">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="section__title">Download my CV</h2>
+          <p class="section__intro">Pick the version that fits, then choose a language. The current viewpoint pre-selects a match.</p>
+        </div>
 
-    <!-- Experience Section (Animated Line) -->
-    <section id="experience" class="section experience-section">
-      <div class="container max-w-5xl">
-        <h2 class="section-title">The Journey <span class="handwritten-accent">so far...</span></h2>
-        
-        <div class="timeline-container">
-          <!-- The winding path SVG -->
-          <svg class="timeline-path-svg" viewBox="0 0 100 800" preserveAspectRatio="none">
-            <path class="draw-line" d="M50,0 Q90,100 50,250 T50,500 T50,800" fill="none" stroke="#1A1A1A" stroke-width="4" stroke-dasharray="10, 10" />
-          </svg>
-          
-          <div class="timeline-nodes">
-            
-            <div class="timeline-node" id="node-1">
-              <div class="node-marker bg-teal"></div>
-              <div class="node-content br-teal">
-                <span class="exp-period">04/2024 &ndash; Present</span>
-                <h3 class="exp-title">Senior COBOL Dev & AI Tinker</h3>
-                <h4 class="exp-company">FPT Software – AI Center</h4>
-                <p>Acting as technical advisor for a cool AI Agent project automating COBOL reverse engineering for Japanese enterprise clients.</p>
-              </div>
+        <div class="cvhub">
+          <div class="cv-roles reveal" role="group" aria-label="Choose a CV version">
+            <button type="button" class="cv-role" data-cv-role="ba" aria-pressed="true">
+              <span>
+                <span class="cv-role__name">BA / Vice PM</span>
+                <span class="cv-role__desc">Business analysis, delivery and Agile focus</span>
+              </span>
+              <span class="cv-role__mark" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="cv-role" data-cv-role="cobol" aria-pressed="false">
+              <span>
+                <span class="cv-role__name">COBOL Developer</span>
+                <span class="cv-role__desc">Mainframe, z/OS, DB2 and batch focus</span>
+              </span>
+              <span class="cv-role__mark" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="cv-role" data-cv-role="general" aria-pressed="false">
+              <span>
+                <span class="cv-role__name">General</span>
+                <span class="cv-role__desc">Balanced overview of everything</span>
+              </span>
+              <span class="cv-role__mark" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="cv-panel reveal">
+            <span class="cv-panel__label">Selected CV</span>
+            <h3 class="cv-panel__role" id="cvPanelRole">BA / Vice PM</h3>
+            <div class="lang-toggle" role="group" aria-label="Choose a language">
+              <button type="button" data-cv-lang="en" aria-pressed="true">English</button>
+              <button type="button" data-cv-lang="vi" aria-pressed="false">Vietnamese</button>
             </div>
-
-            <div class="timeline-node node-right" id="node-2">
-              <div class="node-marker bg-pink"></div>
-              <div class="node-content br-pink">
-                <span class="exp-period">05/2023 &ndash; 04/2024</span>
-                <h3 class="exp-title">COBOL Dev (Ingenium)</h3>
-                <h4 class="exp-company">Dai-ichi Life Insurance</h4>
-                <p>Maintained insurance business features, squashed bugs, and explored deep into policy lifecycle ops.</p>
-              </div>
-            </div>
-
-            <div class="timeline-node" id="node-3">
-              <div class="node-marker bg-yellow"></div>
-              <div class="node-content br-yellow">
-                <span class="exp-period">04/2019 &ndash; 04/2023</span>
-                <h3 class="exp-title">COBOL Developer</h3>
-                <h4 class="exp-company">Capgemini Vietnam</h4>
-                <p>Ensured 24/7 stability for massive European insurance applications, wielding Abend-AID, DB2, and grit.</p>
-              </div>
-            </div>
-
+            <a class="btn btn--download" id="cvDownload" href="#" download>Download PDF</a>
+            <p class="cv-panel__file" id="cvFile"></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Achievements Stickers -->
-    <section id="achievements" class="section achievements-section">
-      <div class="container max-w-5xl">
-        <div class="achievements-cluster">
-          <div class="post-it pink-post" id="ach-1">
-            <h3>AI-Powered COBOL</h3>
-            <p>Guided LLM tools to extract business logic from 30+ year old legacy code.</p>
+    <!-- ============================ VKEY ============================ -->
+    <section class="section" id="vkey">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="section__title">A side project: VKey</h2>
+        </div>
+
+        <div class="vkey">
+          <div class="vkey__body reveal">
+            <p>
+              VKey is a Vietnamese input tool I built as a personal project while learning to
+              "vibe code". It is small and hands-on, a way to get comfortable with modern
+              development outside the mainframe world.
+            </p>
+            <div class="vkey__links">
+              <a href="https://github.com/phatMT97/VKey" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">View on GitHub</a>
+              <span class="signpath">
+                Code signed for free by
+                <a href="https://signpath.io" target="_blank" rel="noopener noreferrer">SignPath.io</a>
+              </span>
+            </div>
           </div>
-          <div class="post-it yellow-post" id="ach-2">
-            <h3>Global Delivery</h3>
-            <p>Kept cross-functional teams aligned across Vietnam, Japan, and Europe.</p>
-          </div>
-          <div class="post-it teal-post" id="ach-3">
-            <h3>Modernization</h3>
-            <p>Pioneering the shift of monolith z/OS systems toward nimble API architectures.</p>
+
+          <div class="vkey__panel reveal">
+            <div class="repo">
+              <span aria-hidden="true">/</span> phatMT97 / VKey
+            </div>
+            <dl class="vkey__meta">
+              <dt>Type</dt><dd>Personal project</dd>
+              <dt>Purpose</dt><dd>Vietnamese input</dd>
+              <dt>Signing</dt><dd>SignPath.io</dd>
+              <dt>Status</dt><dd>Learning build</dd>
+            </dl>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-      <div class="container max-w-5xl">
-        <div class="contact-box br-purple">
-          <h2 class="contact-title">Let's talk! <span class="handwritten-accent">drop a line</span></h2>
-          <p class="contact-desc">Got an ancient mainframe that needs a little AI love? Or just want to chat about retro tech?</p>
-          
-          <div class="social-links">
-            <a href="mailto:phatmtp1997@gmail.com" class="social-btn bg-pink">Email Me</a>
-            <a href="https://www.linkedin.com/in/ph%C3%A1t-mai-t%E1%BA%A5n-4b199a2a2/?skipRedirect=true" target="_blank" rel="noopener noreferrer" class="social-btn bg-teal">LinkedIn</a>
-          </div>
+    <!-- ============================ CONTACT ============================ -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <h2 class="contact__title reveal">Let us talk.</h2>
+        <p class="contact__intro reveal">
+          Whether it is a BA or PM role, a mainframe that needs care, or AI-assisted legacy work,
+          I am happy to hear from you.
+        </p>
+        <div class="contact__links reveal">
+          <a href="mailto:phatmtp1997@gmail.com" class="btn btn--primary">phatmtp1997@gmail.com</a>
+          <a href="https://www.linkedin.com/in/ph%C3%A1t-mai-t%E1%BA%A5n-4b199a2a2/" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">LinkedIn</a>
         </div>
       </div>
     </section>
-
   </main>
 
-  <footer class="footer">
-    <div class="container max-w-5xl text-center">
-      <p>Made with ☕ and <a href="https://greensock.com/" target="_blank">GSAP</a> by Mai Tan Phat &copy; 2026</p>
-    </div>
+  <footer class="footer wrap">
+    <span>Mai Tan Phat, 2026</span>
+    <span>Built with care, no template.</span>
   </footer>
 
-  <!-- GSAP Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>
