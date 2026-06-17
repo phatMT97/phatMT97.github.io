@@ -18,7 +18,7 @@ The page must read as senior and professional (BA/PM credibility) while keeping 
 
 Refined editorial minimal (per `minimalist-ui` + `high-end-visual-design`, built lead by `design-taste-frontend` v2, audited via `redesign-existing-projects`).
 
-- **Palette:** warm paper background, near-black ink, **one** muted accent (ink-blue or warm rust — finalized in build). No gradients, no heavy shadows.
+- **Palette:** warm paper background, near-black ink, **one** muted accent (**ink-blue** — locked). No gradients, no heavy shadows.
 - **Type:** editorial contrast — display serif headlines, clean grotesk body, a touch of mono as a terminal/COBOL nod. Generous whitespace, hairline rules.
 - **Motion:** restrained — subtle scroll-reveal fades, link underlines, smooth anchor scroll. Respects `prefers-reduced-motion`.
 - **Tone:** humble but capable (per `CLAUDE.md`); no overselling.
@@ -75,7 +75,7 @@ Implementation:
    | General | `Mai-Tan-Phat-CV-Minimal-General.pdf` | `Mai-Tan-Phat-CV-Minimal-General-VI.pdf` |
 
 7. **VKey – Vietnamese Input** — honest blurb ("a personal project, learning vibe coding"), GitHub link (`https://github.com/phatMT97/VKey`), and a small **"Code signed for free by SignPath.io"** credit line.
-8. **Contact + footer** — email (`tanphatminhthuy1210@gmail.com` or existing contact), LinkedIn. Minimal footer, no GSAP credit.
+8. **Contact + footer** — email (`phatmtp1997@gmail.com` — locked), LinkedIn. Minimal footer, no GSAP credit.
 
 ## 6. File structure
 
