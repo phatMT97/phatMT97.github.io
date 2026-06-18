@@ -11,7 +11,7 @@
 :root {
   --bg: #FFFFFF;
   --text: #1A1A1A;
-  --text-muted: #5A5A5A;
+  --text-muted: #454545;
   --accent: #1E3A5F;
   --divider: #E2E2E2;
 
@@ -20,7 +20,7 @@
 
   --page-max: 740px;
   --section-gap: 30px;
-  --print-section-gap: 10px;
+  --print-section-gap: 9px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -248,25 +248,25 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
   a { color: var(--text); border-bottom: none; }
 
   .section { margin-bottom: var(--print-section-gap); }
-  .section-title { margin-bottom: 7px; padding-bottom: 4px; font-size: 10.5px; }
+  .section-title { margin-bottom: 8px; padding-bottom: 4px; font-size: 11px; }
 
-  .cv-header { margin-bottom: 12px; }
-  .cv-name { font-size: 26px; margin-bottom: 3px; }
-  .cv-role { font-size: 13px; margin-bottom: 7px; }
-  .cv-contact { font-size: 11px; }
+  .cv-header { margin-bottom: 14px; }
+  .cv-name { font-size: 27px; margin-bottom: 3px; }
+  .cv-role { font-size: 14px; margin-bottom: 8px; }
+  .cv-contact { font-size: 11.5px; }
 
-  .summary p { font-size: 12.2px; line-height: 1.48; }
+  .summary p { font-size: 13px; line-height: 1.5; }
   .work-entry { margin-bottom: 8px; }
-  .work-company { font-size: 14px; }
-  .work-period { font-size: 10.5px; }
-  .work-title { font-size: 11.6px; margin-bottom: 4px; }
-  .work-bullets li { font-size: 11.6px; line-height: 1.42; margin-bottom: 2px; padding-left: 13px; }
+  .work-company { font-size: 15px; }
+  .work-period { font-size: 11px; }
+  .work-title { font-size: 12.5px; margin-bottom: 5px; }
+  .work-bullets li { font-size: 12.6px; line-height: 1.5; margin-bottom: 3px; padding-left: 14px; }
 
-  .skill-group h4 { font-size: 11.4px; }
-  .skill-group p { font-size: 11.4px; line-height: 1.42; }
-  .skills-list { gap: 5px; }
+  .skill-group h4 { font-size: 12.5px; }
+  .skill-group p { font-size: 12.5px; line-height: 1.5; }
+  .skills-list { gap: 6px; }
 
-  .edu-item, .languages-line { font-size: 11.8px; }
+  .edu-item, .languages-line { font-size: 12.5px; }
 }
 </style>
 </head>
@@ -297,10 +297,10 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
     <section class="section summary">
       <h2 class="section-title">Tóm tắt</h2>
       <p data-variant="ba-ai">
-        Business Analyst chuyên về <strong>sản phẩm AI / LLM</strong>. Hơn 2 năm chuyển nhu cầu của khách hàng Nhật thành các agent xử lý tài liệu và knowledge base đã đưa vào sử dụng — đảm nhận trọn vẹn từ khảo sát yêu cầu, viết đặc tả, thiết kế UX đến demo. Trên nền tảng <strong>5 năm lập trình mainframe</strong> trong ngành bảo hiểm: hiểu sâu hiếm có về nghiệp vụ được quản lý chặt và hệ thống legacy.
+        Business Analyst cho <strong>sản phẩm AI / LLM</strong>. Hơn 2 năm chuyển yêu cầu của khách hàng Nhật thành các agent LLM xử lý tài liệu và knowledge base đã đưa vào sử dụng — phụ trách trọn vẹn từ khảo sát yêu cầu, viết đặc tả, thiết kế UX đến demo với khách. Trên nền tảng <strong>5 năm xây dựng hệ thống bảo hiểm bằng COBOL</strong>, kết hợp hiểu biết sâu về hệ thống legacy với năng lực làm sản phẩm AI.
       </p>
       <p data-variant="cobol-dev">
-        Lập trình viên COBOL / mainframe với <strong>5 năm trên hệ thống bảo hiểm production</strong> — 4 năm trên IBM z/OS (COBOL, DB2, CICS, JCL) cho khách hàng bảo hiểm phi nhân thọ Pháp, cùng 1 năm trên hệ thống lõi <strong>Ingenium</strong> bảo hiểm nhân thọ (Unix / Oracle). Hiện là người nắm nghiệp vụ mainframe chủ chốt cho các dự án AI tạo tài liệu và hiện đại hóa COBOL legacy.
+        Lập trình viên COBOL / mainframe với <strong>5 năm trên hệ thống bảo hiểm production</strong> — 4 năm trên IBM z/OS (COBOL, DB2, CICS, JCL) cho khách hàng bảo hiểm phi nhân thọ Pháp, cùng 1 năm trên hệ thống lõi <strong>Ingenium</strong> bảo hiểm nhân thọ (Unix / Oracle). Hiện là chuyên gia nghiệp vụ mainframe cho một dự án AI tạo tài liệu và hiện đại hóa một codebase COBOL legacy quy mô lớn.
       </p>
     </section>
 
@@ -315,10 +315,10 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
           </div>
           <p class="work-title">Business Analyst</p>
           <ul class="work-bullets">
-            <li data-variant="ba-ai"><em>AI Knowledge-Base Agent — Telecom (Nhật), giữa 2025 – nay:</em> BA duy nhất trong team 11 người, đưa vào vận hành agent LLM biến tài liệu kỹ thuật thành tài liệu tự sinh và knowledge base hỏi-đáp tra cứu được. Đảm nhận yêu cầu (demo khách), đặc tả chức năng và UI/UX.</li>
-            <li data-variant="ba-ai"><em>AI Agent bóc tách COBOL legacy — Nhật, 04/2024 – giữa 2025:</em> Người duy nhất nắm nghiệp vụ mainframe trong team; thiết lập tiêu chí "đúng" và validate phần bóc tách business logic, call-graph, hỏi-đáp legacy của agent dựa trên hành vi thật của COBOL/JCL/DB2. <strong>Đưa PoC tới mức được khách hàng duyệt.</strong></li>
-            <li data-variant="cobol-dev">Người duy nhất nắm nghiệp vụ mainframe cho agent AI bóc tách <strong>business logic, call-graph và tài liệu</strong> từ một codebase COBOL lớn, hàng chục năm tuổi; thiết lập tiêu chí "đúng" và validate output dựa trên hành vi thật của COBOL/JCL/DB2. <strong>Đưa PoC tới mức được khách hàng duyệt.</strong></li>
-            <li data-variant="cobol-dev">Hiện là BA cho một agent knowledge base dùng LLM cho khách hàng viễn thông Nhật Bản.</li>
+            <li data-variant="ba-ai"><em>AI Knowledge-Base Agent — Nhật, giữa 2025 – nay:</em> BA duy nhất trong nhóm 11 người, đưa vào vận hành agent LLM tự động sinh tài liệu kỹ thuật và xây dựng knowledge base hỏi-đáp tra cứu được. Phụ trách làm rõ yêu cầu, viết đặc tả chức năng và thiết kế UI/UX; trực tiếp khảo sát yêu cầu và demo với khách.</li>
+            <li data-variant="ba-ai"><em>AI Agent bóc tách COBOL legacy — Nhật, 04/2024 – giữa 2025:</em> Người duy nhất nắm nghiệp vụ mainframe trong nhóm; thiết lập tiêu chí "đúng" và kiểm chứng phần bóc tách business logic, call-graph, hỏi-đáp legacy của agent dựa trên hành vi thật của COBOL/JCL/DB2. <strong>PoC được khách hàng phê duyệt.</strong></li>
+            <li data-variant="cobol-dev">Người duy nhất nắm nghiệp vụ mainframe cho agent AI bóc tách <strong>business logic, call-graph và tài liệu</strong> từ một codebase COBOL lớn, hàng chục năm tuổi; thiết lập tiêu chí "đúng" và kiểm chứng kết quả dựa trên hành vi thật của COBOL/JCL/DB2. <strong>PoC được khách hàng phê duyệt.</strong></li>
+            <li data-variant="cobol-dev">Hiện là BA cho một agent knowledge base dùng LLM, phục vụ khách hàng Nhật Bản.</li>
           </ul>
         </div>
 
@@ -330,9 +330,9 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
           <p class="work-title">COBOL Developer — Hệ thống lõi Ingenium</p>
           <ul class="work-bullets">
             <li data-variant="ba-ai">Xây dựng logic <strong>surrender charge</strong> cho sản phẩm unit-linked và sinh giấy tờ gửi khách (Crystal Reports) trên hệ thống lõi Ingenium (COBOL / Unix / Oracle); xử lý lỗi production.</li>
-            <li data-variant="cobol-dev">Bảo trì và nâng cấp hệ thống lõi bảo hiểm nhân thọ Ingenium (COBOL trên Unix, Oracle, batch bằng Perl).</li>
+            <li data-variant="cobol-dev">Phát triển và bảo trì hệ thống lõi bảo hiểm nhân thọ Ingenium (COBOL trên Unix/Oracle, batch bằng Perl).</li>
             <li data-variant="cobol-dev">Xây dựng logic <strong>surrender charge</strong> cho sản phẩm unit-linked; xử lý lỗi production.</li>
-            <li data-variant="cobol-dev">Sinh giấy tờ gửi khách và trích xuất dữ liệu hợp đồng bằng Crystal Reports.</li>
+            <li data-variant="cobol-dev">Xây dựng giấy tờ gửi khách và bản trích xuất dữ liệu hợp đồng bằng Crystal Reports.</li>
           </ul>
         </div>
 
@@ -343,11 +343,10 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
           </div>
           <p class="work-title">COBOL Developer → Senior Consultant</p>
           <ul class="work-bullets">
-            <li data-variant="ba-ai">4 năm trên nền tảng z/OS của khách hàng bảo hiểm phi nhân thọ Pháp, làm việc trực tiếp với khách; tự đọc hiểu code legacy không tài liệu để xây màn hình CICS mới.</li>
-            <li data-variant="cobol-dev">Xây dựng và bảo trì ứng dụng z/OS quy mô lớn (COBOL, DB2, CICS, JCL) cho khách hàng bảo hiểm phi nhân thọ Pháp suốt 4 năm.</li>
-            <li data-variant="cobol-dev"><strong>Tự reverse-engineer code legacy không có tài liệu</strong> để xây màn hình CICS mới theo yêu cầu khách — trên nền tảng vốn rất khó dựng màn hình mới.</li>
+            <li data-variant="ba-ai">Tự đọc hiểu code legacy không có tài liệu để xây màn hình CICS mới trên nền tảng z/OS của khách hàng bảo hiểm phi nhân thọ Pháp — 4 năm làm việc trực tiếp với khách.</li>
+            <li data-variant="cobol-dev">Phát triển và bảo trì ứng dụng COBOL trên z/OS (DB2, CICS, JCL) cho khách hàng bảo hiểm phi nhân thọ Pháp trong 4 năm, gồm cả bảo trì lẫn phát triển mới.</li>
+            <li data-variant="cobol-dev"><strong>Tự reverse-engineer code legacy không có tài liệu</strong> để thiết kế và xây dựng màn hình CICS mới (BMS map) theo yêu cầu khách.</li>
             <li data-variant="cobol-dev">Xử lý các sự cố production phức tạp và vấn đề batch (JCL); tối ưu truy vấn DB2 và hiệu năng COBOL.</li>
-            <li data-variant="cobol-dev">Làm việc trực tiếp với khách hàng trên 2 team, bao gồm cả maintenance lẫn phát triển mới.</li>
           </ul>
         </div>
 
@@ -360,7 +359,7 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
 
         <div class="skill-group" data-variant="ba-ai" style="--ord-ba-ai:1">
           <h4>Business Analysis</h4>
-          <p>Làm rõ yêu cầu · Viết tài liệu đặc tả · Demo với khách (JP / EU) · Agile / Scrum · Quản lý backlog</p>
+          <p>Làm rõ yêu cầu · Viết tài liệu đặc tả · Demo với khách (Nhật / EU) · Agile / Scrum · Quản lý backlog</p>
         </div>
 
         <div class="skill-group" data-variant="ba-ai" style="--ord-ba-ai:2">
@@ -370,22 +369,17 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
 
         <div class="skill-group" data-variant="ba-ai" style="--ord-ba-ai:3">
           <h4>AI / LLM</h4>
-          <p>RAG · Knowledge base · Thiết kế prompt · Làm việc gắn liền với AI</p>
+          <p>RAG · Knowledge base · Thiết kế prompt · Đánh giá đầu ra LLM</p>
         </div>
 
         <div class="skill-group" data-variant="ba-ai" style="--ord-ba-ai:4">
-          <h4>Nghiệp vụ</h4>
-          <p>Bảo hiểm (nhân thọ &amp; phi nhân thọ) · Viễn thông</p>
-        </div>
-
-        <div class="skill-group" data-variant="ba-ai" style="--ord-ba-ai:5">
-          <h4>Nền tảng kỹ thuật</h4>
-          <p>COBOL / Mainframe (z/OS, DB2, CICS) — chiều sâu về hệ thống legacy</p>
+          <h4>Nghiệp vụ &amp; hệ thống legacy</h4>
+          <p>Bảo hiểm (nhân thọ &amp; phi nhân thọ) · COBOL / Mainframe (z/OS, DB2, CICS)</p>
         </div>
 
         <div class="skill-group" data-variant="ba-ai" style="--ord-ba-ai:6">
           <h4>Kỹ năng mềm</h4>
-          <p>Giao tiếp với stakeholder · Mentoring · Làm việc cross-functional</p>
+          <p>Giao tiếp với các bên liên quan · Làm việc liên chức năng</p>
         </div>
 
         <div class="skill-group" data-variant="cobol-dev" style="--ord-cobol-dev:1">
@@ -395,7 +389,7 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
 
         <div class="skill-group" data-variant="cobol-dev" style="--ord-cobol-dev:2">
           <h4>DB &amp; Công cụ</h4>
-          <p>DB2 · Oracle (Ingenium) · Batch Perl · Crystal Reports · FileAid</p>
+          <p>DB2 · Oracle · Batch Perl · Crystal Reports · File-AID</p>
         </div>
 
         <div class="skill-group" data-variant="cobol-dev" style="--ord-cobol-dev:4">
@@ -405,7 +399,7 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
 
         <div class="skill-group" data-variant="cobol-dev" style="--ord-cobol-dev:5">
           <h4>Hiện đại hóa</h4>
-          <p>AI / LLM cho hiện đại hóa hệ thống legacy (cố vấn nghiệp vụ)</p>
+          <p>AI / LLM hỗ trợ phân tích &amp; tạo tài liệu cho COBOL legacy</p>
         </div>
 
       </div>
@@ -423,7 +417,7 @@ body[data-role="cobol-dev"] .skill-group { order: var(--ord-cobol-dev, 99); }
     <section class="section languages">
       <h2 class="section-title">Ngôn ngữ</h2>
       <p class="languages-line">
-        Tiếng Anh (Giao tiếp công việc thành thạo) · Tiếng Pháp (Cơ bản)
+        Tiếng Anh · Tiếng Pháp
       </p>
     </section>
   </div>
