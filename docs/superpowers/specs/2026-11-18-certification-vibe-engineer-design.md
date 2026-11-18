@@ -12,7 +12,7 @@ Update the existing GitHub Pages portfolio in place. Preserve its editorial desi
 - Verification: https://www.credly.com/badges/1156bc07-2a85-40ab-b7b8-b820f9265d7c
 - Existing experience: five years developing production COBOL systems, followed by BA and technical advisory work on AI/LLM projects at FPT Software. Do not relabel the FPT role as full-stack engineering.
 - JD priorities: daily Claude Code, shipped features with Cursor, structured prompting and verification, TypeScript or Java, architecture and maintainability, international collaboration.
-- User confirmed daily Claude Code, Codex and agy usage on personal Python, C++/Rust and web projects. Cursor was used for approximately one month; no Cursor-shipped feature has been confirmed.
+- User confirmed daily Claude Code, Codex and Antigravity usage in their professional workflow, alongside personal Python, C++/Rust and web projects. Do not limit daily tool usage to personal projects. Cursor was used for approximately one month; no Cursor-shipped feature has been confirmed.
 - VKey-web is Astro with JavaScript/CSS and TypeScript checking/tooling; the profile is vanilla HTML/CSS/JavaScript. Neither repository establishes React or commercial full-stack TypeScript/Java experience.
 
 ## Content and implementation
