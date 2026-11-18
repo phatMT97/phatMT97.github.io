@@ -17,6 +17,12 @@ plan_review.md
 *.pdf
 # ...but keep the role CVs the portfolio links to (must be deployed)
 !Mai-Tan-Phat-CV-Minimal-*.pdf
+!Mai-Tan-Phat-CV-BA-AI*.pdf
+!Mai-Tan-Phat-CV-COBOL-Dev*.pdf
+!assets/Claude-Certified-Developer-Foundations-Mai-Tan-Phat.pdf
+
+# Private, application-specific CVs are delivered locally, not published
+/deliverables/
 
 # OS files
 .DS_Store

@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
@@ -37,6 +37,7 @@
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#toolkit">Toolkit</a>
+        <a href="#certifications">Certification</a>
         <a href="#cv">CV</a>
         <a href="#vkey">VKey</a>
       </nav>
@@ -82,6 +83,7 @@
           </div>
 
           <p class="hero__status">Currently a Business Analyst at FPT Software, building AI agents for Japanese clients. <strong>Open to BA (AI / product) and COBOL / mainframe roles.</strong></p>
+          <a class="hero__credential" href="#certifications">Claude Certified Developer — Foundations <span>Nov 2026 ↗</span></a>
 
           <div class="stats">
             <div class="stat">
@@ -245,6 +247,30 @@
       </div>
     </section>
 
+    <!-- ============================ CERTIFICATION ============================ -->
+    <section class="section" id="certifications">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <h2 class="section__title">Certification</h2>
+        </div>
+        <article class="credential reveal">
+          <a class="credential__badge" href="https://www.credly.com/badges/1156bc07-2a85-40ab-b7b8-b820f9265d7c" target="_blank" rel="noopener noreferrer" aria-label="Verify Claude Certified Developer — Foundations on Credly">
+            <img src="assets/claude-certified-developer-foundations.png" alt="Claude Certified Developer — Foundations badge" width="598" height="602" loading="lazy">
+          </a>
+          <div class="credential__body">
+            <p class="kicker">Anthropic · Professional certification</p>
+            <h3>Claude Certified Developer — Foundations</h3>
+            <p class="credential__dates">Issued <time datetime="2026-11-15">15 Nov 2026</time> · Expires <time datetime="2027-11-15">15 Nov 2027</time></p>
+            <p>I use Claude Code daily on personal software projects, alongside my work evaluating AI outputs and defining requirements for LLM products.</p>
+            <div class="credential__links">
+              <a class="btn btn--primary" href="https://www.credly.com/badges/1156bc07-2a85-40ab-b7b8-b820f9265d7c" target="_blank" rel="noopener noreferrer">Verify on Credly ↗</a>
+              <a class="btn btn--ghost" href="assets/Claude-Certified-Developer-Foundations-Mai-Tan-Phat.pdf" download>Download certificate</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- ============================ CV HUB ============================ -->
     <section class="section" id="cv">
       <div class="wrap">
@@ -273,13 +299,13 @@
 
           <div class="cv-panel reveal">
             <span class="cv-panel__label">Selected CV</span>
-            <h3 class="cv-panel__role" id="cvPanelRole">BA / Vice PM</h3>
+            <h3 class="cv-panel__role" id="cvPanelRole">BA — AI / LLM</h3>
             <div class="lang-toggle" role="group" aria-label="Choose a language">
               <button type="button" data-cv-lang="en" aria-pressed="true">English</button>
               <button type="button" data-cv-lang="vi" aria-pressed="false">Vietnamese</button>
             </div>
-            <a class="btn btn--download" id="cvDownload" href="#" download>Download PDF</a>
-            <p class="cv-panel__file" id="cvFile"></p>
+            <a class="btn btn--download" id="cvDownload" href="Mai-Tan-Phat-CV-BA-AI.pdf" download>Download PDF</a>
+            <p class="cv-panel__file" id="cvFile">Mai-Tan-Phat-CV-BA-AI.pdf</p>
           </div>
         </div>
       </div>
@@ -297,15 +323,12 @@
             <p>
               VKey is an open-source Vietnamese input utility I build and maintain as a side
               project — a way to stay hands-on with modern application development beyond the
-              mainframe. It ships as a code-signed Windows app, with signing provided for
-              open-source projects by SignPath.io.
+              mainframe. The project combines C++ and Rust with web-based interfaces and
+              published Windows releases.
             </p>
             <div class="vkey__links">
               <a href="https://github.com/phatMT97/VKey" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">View on GitHub</a>
-              <span class="signpath">
-                Code signed for free by
-                <a href="https://signpath.io" target="_blank" rel="noopener noreferrer">SignPath.io</a>
-              </span>
+              <a href="https://github.com/phatMT97/VKey/releases" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">Releases ↗</a>
             </div>
           </div>
 
@@ -316,7 +339,7 @@
             <dl class="vkey__meta">
               <dt>Type</dt><dd>Open-source side project</dd>
               <dt>Purpose</dt><dd>Vietnamese input</dd>
-              <dt>Signing</dt><dd>SignPath.io</dd>
+              <dt>Stack</dt><dd>C++ / Rust / Web UI</dd>
               <dt>Status</dt><dd>Maintained</dd>
             </dl>
           </div>
@@ -345,6 +368,6 @@
     <span>Built with care, no template.</span>
   </footer>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>
